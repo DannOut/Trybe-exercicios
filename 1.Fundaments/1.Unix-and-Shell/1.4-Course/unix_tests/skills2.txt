@@ -1,0 +1,8 @@
+Internet
+Unix
+Bash
+Shell
+Terminal
+Root
+Echo
+Kill
