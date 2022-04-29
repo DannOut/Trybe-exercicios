@@ -5,5 +5,7 @@ O que eu vou aprender na Trybe:
 - Git
 - HTML
 - CSS
--softskills
--Nodejs
+- Docker
+- softskills
+- Nodejs
+
