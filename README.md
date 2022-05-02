@@ -4,6 +4,9 @@
 
 > Estarei atualizando a listagem em paralelo ao avanço do curso
 
+
+
+
 <details>
 <summary>Fundamentos do Desenvolvimento Web </summary>
 
