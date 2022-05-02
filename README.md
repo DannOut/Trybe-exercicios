@@ -1,10 +1,10 @@
-![](![unnamed](https://user-images.githubusercontent.com/39223055/166244050-f627f53c-8214-4c1f-b8b3-a010c8d97af5.png)
+![unnamed](https://user-images.githubusercontent.com/39223055/166244050-f627f53c-8214-4c1f-b8b3-a010c8d97af5.png)
 )
 
-* Repositório com os exercícios da Trybe
+#Repositório com os exercícios da Trybe
 
 <details>
-## **<summary>Fundamentos do Desenvolvimento Web :heavy_check_mark:</summary>**
+<summary>##Fundamentos do Desenvolvimento Web </summary>
 
 ##### Bloco 1: Unix, Bash e Shell Script
 - [x] 1.3 - Fundamentos do Desenvolvimento Web
@@ -80,7 +80,7 @@
 </details>
 
 <details>
-## <summary>Desenvolvimento Front-end :heavy_check_mark:</summary>
+<summary>Desenvolvimento Front-end</summary>
 
 ##### Bloco 11: Introdução à React
 - [] 11.1 - Introdução - Front-end
@@ -91,8 +91,8 @@
 
 ##### Bloco 12: Componentes com Estado, Eventos e Formulários com React
 - [] 12.1 - Componentes com estado e eventos
-- [X] 12.2 - Formulários no React
-- [X] 12.3 - Projeto - Movie Cards Library Stateful
+- [] 12.2 - Formulários no React
+- [] 12.3 - Projeto - Movie Cards Library Stateful
 
 ##### Bloco 13: Ciclo de Vida de Componentes e React Router
 - [] 13.2 - React Router
@@ -127,9 +127,11 @@
 
 ##### Bloco 19: Projeto App de Receitas
 - [] 19.1 - Projeto - App de Receitas
+
 </details>
+
 <details>
-## <summary>Desenvolvimento Back-end :hourglass_flowing_sand:<summary>
+<summary>Desenvolvimento Back-end<summary>
 
 ##### Bloco 20: Introdução à SQL
 - [] 20.1 - Introdução - Back-end
@@ -213,8 +215,9 @@
 ##### Bloco 32: Projeto Trybeer II
 - [ ] 32.1 - Projeto - Trybeer v2
 </details>
+
 <details>
-## <summary>Ciência da Computação :hourglass_flowing_sand:</summary>
+<summary>Ciência da Computação</summary>
 
 ##### Bloco 33: Arquitetura de Computadores e Redes
 - [ ] 33.1 - Introdução - Ciência da Computação
