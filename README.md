@@ -1,10 +1,9 @@
 ![unnamed](https://user-images.githubusercontent.com/39223055/166244050-f627f53c-8214-4c1f-b8b3-a010c8d97af5.png)
-)
 
 #Repositório com os exercícios da Trybe
 
 <details>
-<summary>##Fundamentos do Desenvolvimento Web </summary>
+<summary>Fundamentos do Desenvolvimento Web </summary>
 
 ##### Bloco 1: Unix, Bash e Shell Script
 - [x] 1.3 - Fundamentos do Desenvolvimento Web
@@ -131,7 +130,7 @@
 </details>
 
 <details>
-<summary>Desenvolvimento Back-end<summary>
+<summary>Desenvolvimento Back-end</summary>
 
 ##### Bloco 20: Introdução à SQL
 - [] 20.1 - Introdução - Back-end
