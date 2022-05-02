@@ -130,7 +130,7 @@
 </details>
 
 <details>
-<summary>Desenvolvimento Back-end</summary>
+<summary>Desenvolvimento Back-end</summary> 
 
 ##### Bloco 20: Introdução à SQL
 - [ ] 20.1 - Introdução - Back-end
@@ -216,7 +216,7 @@
 </details>
 
 <details>
-<summary>Ciência da Computação</summary>
+<summary>Ciência da Computação</summary> 
 
 ##### Bloco 33: Arquitetura de Computadores e Redes
 - [ ] 33.1 - Introdução - Ciência da Computação
