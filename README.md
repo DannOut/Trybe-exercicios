@@ -257,9 +257,3 @@
 - [ ] 38.4 - Projeto - TING - Trybe Is Not Google
 
 </details>
-
-<details>
-<summary>Calendário Trybe 2022 </summary>
-![Calendário 2022 Trybe](https://user-images.githubusercontent.com/39223055/166255454-37d4d5f0-d1ff-42b5-8542-7062d1d9bec1.png)
-
-</details>
