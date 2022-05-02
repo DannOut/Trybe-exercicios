@@ -1,4 +1,4 @@
-![unnamed](https://user-images.githubusercontent.com/39223055/166244050-f627f53c-8214-4c1f-b8b3-a010c8d97af5.png)
+![Trybe](https://user-images.githubusercontent.com/39223055/166244050-f627f53c-8214-4c1f-b8b3-a010c8d97af5.png)(http://betrybe.com)
 
 # Repositório com os exercícios da Trybe
 
