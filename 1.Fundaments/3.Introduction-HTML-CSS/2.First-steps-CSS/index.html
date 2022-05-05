@@ -5,14 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Exercícios Trybe 1-3.2</title>
-    <style>
-      h2 {
+    <style> 
+    /* Style é usado na head para poder realizar a estilização da página */
+      h2 {  /* está selecionando todos os itens h1 para a cor verde */
         color: green;
       }
       body {
-        background-color: rgb(255, 400, 200);
+        background-color: rgb(255, 400, 200); /* estou setando a cor de todo a página para um RGB a minha escolha, diferente de setar uma cor, estou setando diretamente a escala RGB */
       }
-      #corFavorita {
+      #corFavorita { /* criei um link em cor favorita e setei os valores utilizando o # */
         background-color: brown;
         color: aqua;
       }
@@ -21,29 +22,37 @@
       }
       h1 {
         color: orange;
-        font-size: 65px;
+        font-size: 65px; /* defini o tamanho da fonte H1 para 65 px */
       }
-      .List-order{
-          color: aqua;
-          background-color: chocolate;
-
+      .List-order { /* setei a classe list-order todos os valores abaixo */
+        color: aqua;
+        background-color: chocolate;
+      }
+      hr { 
+        color: black;
+        height: 10px;
+        background-color: black;
       }
     </style>
   </head>
   <body>
+    <hr /> <!-- cria uma linha de separação -->
     <h1>Exercícios 3.2</h1>
-    <p id="corFavorita">Qual é a sua cor favorita?</p>
+    <h2>Estilizando as páginas</h2>
+    <hr />
+    <p id="corFavorita">Qual é a sua cor favorita?</p> <!-- setei cor favorita como id para ESTE paragrafo -->
     <ul class="List-unorder">
       <li>Amarelo</li>
       <li>Vermelho</li>
       <li>Marrom</li>
     </ul>
-
+    <hr />
     <p>Qual é a sua cor menos favorita?</p>
-    <ol class="List-order">
+    <ol class="List-order">  <!-- setei a classe list-order, tudo que estiver com essa classe receberá o style setado acima -->
       <li>Amarelo</li>
       <li>Vermelho</li>
       <li>Marrom</li>
     </ol>
+    <hr />
   </body>
 </html>
