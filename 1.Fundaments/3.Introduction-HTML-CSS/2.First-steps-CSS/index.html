@@ -6,44 +6,109 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Exercícios Trybe 1-3.2</title>
     <style>
+      /* Style é usado na head para poder realizar a estilização da página */
       h2 {
+        /* está selecionando todos os itens h1 para a cor verde */
         color: green;
+        font-family: Arial, Helvetica, sans-serif; /* modificando a fonte, a virgula defina a lista de prioridades, no caso ele verifica a arial, caso não tenha, vai para helvetica e por fim, vai pra sans-serif */
       }
       body {
         background-color: rgb(255, 400, 200);
+        /* estou setando a cor de todo a página para um RGB a minha escolha, diferente de setar uma cor, estou setando diretamente a escala RGB */
+        font-size: 16px;
+        /* aumenta o tamanho de todas as fontes no site para 20 pixel */
       }
       #corFavorita {
+        /* criei um link em cor favorita e setei os valores utilizando o # */
         background-color: brown;
         color: aqua;
+        font-size: 3em;
+        /* aumenta a fonte para 2em, equivale a duas vezes o tamanho do body (primeiro se atribui um tamanho para o body e o em equivale a 2 body, se fosse 4 equivaleria a 4 body) */
+        font-style: italic;
+        font-family: fantasy;
+        text-align: end;
+        line-height: 2em;
       }
       .List-unorder {
         background-color: blue;
+        font-weight: 600; /* definiu todo o texto em negrito */
+        text-align: center;
+        /* alinha o texto na posição definida */
+        text-decoration: underline;
+        /* decora o texto com underline */
       }
       h1 {
-        color: orange;
+        color: black;
         font-size: 65px;
+        font-weight: 1000;
+        /* defini o tamanho da fonte H1 para 65 px */
       }
-      .List-order{
-          color: aqua;
-          background-color: chocolate;
-
+      .List-order {
+        /* setei a classe list-order todos os valores abaixo */
+        color: aqua;
+        background-color: chocolate;
+        line-height: 40px;
+        /* fez um espaçamento entre as linhas de 40 pixels */
+        font-style: italic;
+        /* definiu todo o estilo do texto como italico */
+      }
+      hr {
+        color: black;
+        height: 10px;
+        background-color: black;
+      }
+      #CSStext {
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        text-decoration: underline;
+      }
+      #amarelo {
+        background-color: yellow;
+      }
+      #vermelho {
+        background-color: red;
+      }
+      #marrom {
+        background-color: brown;
       }
     </style>
   </head>
   <body>
+    <hr />
+    <!-- cria uma linha de separação -->
     <h1>Exercícios 3.2</h1>
+    <h2>Estilizando as páginas</h2>
+    <hr />
     <p id="corFavorita">Qual é a sua cor favorita?</p>
+    <!-- setei cor favorita como id para ESTE paragrafo -->
     <ul class="List-unorder">
-      <li>Amarelo</li>
-      <li>Vermelho</li>
-      <li>Marrom</li>
+      <li id="amarelo">Amarelo</li>
+      <li id="vermelho">Vermelho</li>
+      <li id="marrom">Marrom</li>
     </ul>
-
+    <hr />
     <p>Qual é a sua cor menos favorita?</p>
     <ol class="List-order">
+      <!-- setei a classe list-order, tudo que estiver com essa classe receberá o style setado acima -->
       <li>Amarelo</li>
       <li>Vermelho</li>
       <li>Marrom</li>
     </ol>
+    <hr />
+    <em id="CSStext"
+      >Cascading Stylesheets — or CSS — is the first technology you should start
+      learning after HTML. While HTML is used to define the structure and
+      semantics of your content, CSS is used to style it and lay it out. For
+      example, you can use CSS to alter the font, color, size, and spacing of
+      your content, split it into multiple columns, or add animations and other
+      decorative features.</em
+    >
+    <!-- utilizado <em></em> para enfatizar o testo, o colocando em italico -->
+
+    <br />
+    <img
+      src="https://user-images.githubusercontent.com/39223055/166244050-f627f53c-8214-4c1f-b8b3-a010c8d97af5.png"
+      alt="trybe"
+    />
   </body>
 </html>
