@@ -5,15 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Exercícios Trybe 1-3.2</title>
-    <style> 
-    /* Style é usado na head para poder realizar a estilização da página */
-      h2 {  /* está selecionando todos os itens h1 para a cor verde */
+    <style>
+      /* Style é usado na head para poder realizar a estilização da página */
+      h2 {
+        /* está selecionando todos os itens h1 para a cor verde */
         color: green;
       }
       body {
-        background-color: rgb(255, 400, 200); /* estou setando a cor de todo a página para um RGB a minha escolha, diferente de setar uma cor, estou setando diretamente a escala RGB */
+        background-color: rgb(
+          255,
+          400,
+          200
+        ); /* estou setando a cor de todo a página para um RGB a minha escolha, diferente de setar uma cor, estou setando diretamente a escala RGB */
       }
-      #corFavorita { /* criei um link em cor favorita e setei os valores utilizando o # */
+      #corFavorita {
+        /* criei um link em cor favorita e setei os valores utilizando o # */
         background-color: brown;
         color: aqua;
       }
@@ -24,11 +30,12 @@
         color: orange;
         font-size: 65px; /* defini o tamanho da fonte H1 para 65 px */
       }
-      .List-order { /* setei a classe list-order todos os valores abaixo */
+      .List-order {
+        /* setei a classe list-order todos os valores abaixo */
         color: aqua;
         background-color: chocolate;
       }
-      hr { 
+      hr {
         color: black;
         height: 10px;
         background-color: black;
@@ -36,11 +43,13 @@
     </style>
   </head>
   <body>
-    <hr /> <!-- cria uma linha de separação -->
+    <hr />
+    <!-- cria uma linha de separação -->
     <h1>Exercícios 3.2</h1>
     <h2>Estilizando as páginas</h2>
     <hr />
-    <p id="corFavorita">Qual é a sua cor favorita?</p> <!-- setei cor favorita como id para ESTE paragrafo -->
+    <p id="corFavorita">Qual é a sua cor favorita?</p>
+    <!-- setei cor favorita como id para ESTE paragrafo -->
     <ul class="List-unorder">
       <li>Amarelo</li>
       <li>Vermelho</li>
@@ -48,11 +57,16 @@
     </ul>
     <hr />
     <p>Qual é a sua cor menos favorita?</p>
-    <ol class="List-order">  <!-- setei a classe list-order, tudo que estiver com essa classe receberá o style setado acima -->
+    <ol class="List-order">
+      <!-- setei a classe list-order, tudo que estiver com essa classe receberá o style setado acima -->
       <li>Amarelo</li>
       <li>Vermelho</li>
       <li>Marrom</li>
     </ol>
     <hr />
+    <img
+      src="https://user-images.githubusercontent.com/39223055/166244050-f627f53c-8214-4c1f-b8b3-a010c8d97af5.png"
+      alt="trybe"
+    />
   </body>
 </html>
