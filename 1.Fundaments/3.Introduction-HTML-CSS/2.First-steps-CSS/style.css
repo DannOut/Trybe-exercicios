@@ -1,0 +1,66 @@
+
+/* Style é usado na head para poder realizar a estilização da página */
+h2 {
+  /* está selecionando todos os itens h1 para a cor verde */
+  color: green;
+  font-family: Arial, Helvetica, sans-serif; /* modificando a fonte, a virgula defina a lista de prioridades, no caso ele verifica a arial, caso não tenha, vai para helvetica e por fim, vai pra sans-serif */
+}
+body {
+  background-color: rgb(255, 400, 200);
+  /* estou setando a cor de todo a página para um RGB a minha escolha, diferente de setar uma cor, estou setando diretamente a escala RGB */
+  font-size: 16px;
+  /* aumenta o tamanho de todas as fontes no site para 20 pixel */
+}
+#corFavorita {
+  /* criei um link em cor favorita e setei os valores utilizando o # */
+  background-color: brown;
+  color: aqua;
+  font-size: 3em;
+  /* aumenta a fonte para 2em, equivale a duas vezes o tamanho do body (primeiro se atribui um tamanho para o body e o em equivale a 2 body, se fosse 4 equivaleria a 4 body) */
+  font-style: italic;
+  font-family: fantasy;
+  text-align: end;
+  line-height: 2em;
+}
+.List-unorder {
+  background-color: blue;
+  font-weight: 600; /* definiu todo o texto em negrito */
+  text-align: center;
+  /* alinha o texto na posição definida */
+  text-decoration: underline;
+  /* decora o texto com underline */
+}
+h1 {
+  color: black;
+  font-size: 65px;
+  font-weight: 1000;
+  /* defini o tamanho da fonte H1 para 65 px */
+}
+.List-order {
+  /* setei a classe list-order todos os valores abaixo */
+  color: aqua;
+  background-color: chocolate;
+  line-height: 40px;
+  /* fez um espaçamento entre as linhas de 40 pixels */
+  font-style: italic;
+  /* definiu todo o estilo do texto como italico */
+}
+hr {
+  color: black;
+  height: 10px;
+  background-color: black;
+}
+#CSStext {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+    sans-serif;
+  text-decoration: underline;
+}
+#amarelo {
+  background-color: yellow;
+}
+#vermelho {
+  background-color: red;
+}
+#marrom {
+  background-color: brown;
+}
