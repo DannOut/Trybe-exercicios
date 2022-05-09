@@ -1,0 +1,19 @@
+/* setei transition aqui para executar lá em baixo */
+h1,p{
+    text-align: center;
+    transition: font-size 4s;
+}
+/* pseudoclasse, quando passa o mouse por cima acontece x */
+li:hover{
+    background-color: blue;
+    transition:ease-in-out;
+}
+/* pseudoclasse, quando clico com o mouse acontece x */
+li:active{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+}
+/* aqui vai executar a transition que setei lá em cima, ao passar o mouse pelo titulo e texto, eles devemoraram 4seg para chegar ao font size desejado */
+h1:hover,p:hover{
+    font-size: 100px;
+}
