@@ -7,11 +7,12 @@ h1,p{
 li:hover{
     background-color: blue;
     transition:ease-in-out;
+    list-style: none;
 }
 /* pseudoclasse, quando clico com o mouse acontece x */
 li:active{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    
+    list-style: none;
 }
 /* aqui vai executar a transition que setei lá em cima, ao passar o mouse pelo titulo e texto, eles devemoraram 4seg para chegar ao font size desejado */
 h1:hover,p:hover{
