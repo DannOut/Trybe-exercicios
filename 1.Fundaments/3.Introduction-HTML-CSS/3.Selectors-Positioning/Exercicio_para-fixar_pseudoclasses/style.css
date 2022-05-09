@@ -30,12 +30,13 @@ div:nth-of-type(5){
 }
 /* fim de cores de divs de 1 a 5 */
 
-div:nth-of-type(odd){
+div:nth-of-type(odd) > h3{
     font-style: italic;
 }
-h3:nth-child()/* realizar teste com odd e even */
+/* o h3 que está dentro do DIV na posição 5 */
+div:nth-of-type(5) > h3
 {
-    background-color: black;
+   border: 1px solid green;
 
 }
 
