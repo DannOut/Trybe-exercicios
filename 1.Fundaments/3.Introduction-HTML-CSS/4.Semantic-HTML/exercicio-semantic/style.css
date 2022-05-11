@@ -1,8 +1,52 @@
-table, th, td {
-    border: 1px solid black;
-    border-collapse:collapse;
+body{
+    background-color: white;
 }
-th, td{
-    padding: 5px;
-    text-align: left;
+
+table,th,td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th,td {
+  padding: 7px;
+  text-align: left;
+}
+section.firstsection {
+  padding-bottom: 3%;
+}
+
+section.firstsection img {
+  display: inline-block;
+  float: right;
+  top: 10px;
+}
+table {
+  display: inline-block;
+}
+.prism{
+    float: left;
+}
+h2{
+    font-size: 25px;
+}
+h3{
+    font-size: 25px;
+}
+section.secondsection aside {
+    float: right;
+    vertical-align: middle;
+    
+}
+section.secondsection aside h4{
+    margin: 0%;
+}
+.secondsection{
+    margin-bottom: 5%;
+    margin-top: 7%;
+}
+section footer h4{
+    margin-top: 5%;
+    margin-bottom: 0%;    
+}
+section footer{
+    text-align: center;
 }
