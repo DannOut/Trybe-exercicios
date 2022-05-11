@@ -15,7 +15,6 @@ section.firstsection {
 }
 
 section.firstsection img {
-  display: inline-block;
   float: right;
   top: 10px;
 }
