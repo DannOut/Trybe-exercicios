@@ -51,8 +51,9 @@ function meuSalario(salarioBruto) {
     console.log('valor atribuido apoś aplicar 27,5%: R$', desconto);
     desconto = desconto - 869.36;
     console.log('Desconto: R$', desconto);
-    console.log('seu salário líquido é de: R$', salarioBase - desconto);
+    console.log('seu salário líquido é de: R$ ${salarioBase - desconto}');
   }
+  console.log ('teste ${testando}')
 }
 
-meuSalario(3000.0);
+meuSalario(3000.00);
