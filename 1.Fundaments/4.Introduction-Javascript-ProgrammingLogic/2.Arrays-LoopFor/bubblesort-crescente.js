@@ -1,4 +1,4 @@
-let array = [5, 3, 2, 4, 7, 1, 0, 6];
+let array = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
 let it; //numero de iterações
 let pos; // sempre uso a posicao atual
 let temp; //variavel para troca
