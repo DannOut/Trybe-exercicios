@@ -2,7 +2,7 @@
 
 let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
 for (let position = 0; position < numbers.length ; position += 1) {
-  if (position + 1 <= numbers.length + 1) {
+  if (position < numbers.length - 1) {
     aux = numbers[position] * numbers[position + 1];
     numbers[position] = aux;
   } else {
