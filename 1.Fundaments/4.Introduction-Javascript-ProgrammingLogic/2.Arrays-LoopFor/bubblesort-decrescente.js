@@ -1,4 +1,4 @@
-let array = [5, 3, 2, 4, 7, 1, 0, 6];
+let array = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
 
 for (let index = 0; index < array.length; index += 1) {
   for (let position = 0; position < array.length - index; position += 1) {
