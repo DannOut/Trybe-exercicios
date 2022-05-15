@@ -2,12 +2,12 @@
 
 let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
 for (let position = 0; position < numbers.length ; position += 1) {
-  if (numbers.length == test) {
-    numbers[position] = numbers[position] * 2;
-  } else {
+  if (position + 1 <= numbers.length + 1) {
     aux = numbers[position] * numbers[position + 1];
     numbers[position] = aux;
-   
+  } else {
+  numbers[position] = numbers[position] * 2;
+  
   }
   console.log('numero de iterações: ', position);
   console.log(numbers);
