@@ -12,3 +12,5 @@ for (let position = 0; position < numbers.length ; position += 1) {
   console.log('numero de iterações: ', position);
   console.log(numbers);
 }
+
+// tava sofrendo, pois a POSIÇÃO final do array é 9, porém  o TAMANHO do array é 10, logo, o IF deveria ser a posicão MENOR que o TAMANHO DO ARRAY MENOS 1;
