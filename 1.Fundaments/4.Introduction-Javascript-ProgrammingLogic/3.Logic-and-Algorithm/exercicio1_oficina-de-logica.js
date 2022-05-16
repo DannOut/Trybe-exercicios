@@ -11,31 +11,20 @@ Caso não o encontre, imprima:
 "Elemento não encontrado no array"
 ----------------------------------- */
 
-let array = [
-  5,
-  'Ewerton',
-  10,
-  20,
-  'Daniel',
-  40,
-  'Maycon',
-  'Julia',
-  'Caio',
-  true,
-  '',
-];
+let array = [0,'daniel',true,'ok',15];
 
-let encontrar = 'josue';
-let variavel;
-for (index = 0 ; index < array.length; index += 1) {
-  if (encontrar === array[index]) {
-      variavel = index;
-      console.log(variavel);
-  }
+let value = 'daniel';
+let check =false;
+for (let index = 0; index < array.length; index +=1){
+
+  //console.log (index);
+  if (value == array[index]){
+    console.log (typeof array[index],',', array[index]);
+    check = true;
+    break
 }
-  if (variavel == encontrar){
-    console.log("Elemento não encontrado no array");
-  } else {
-    console.log('a posição é: ',variavel);
-  }
-  
+}
+
+if (check != true){
+  console.log('Elemento não encontrado no array');
+}
