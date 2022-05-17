@@ -10,11 +10,15 @@
 
 */
 
-function inverseTriangle(n) {
-  let teste = '';
-  for (let index = n; index > 0; index -= 1) {
-    teste = '*' + teste;
-    console.log(teste);
+function meioTriangulo(n) {
+  for (let index = 0; index <= n; index += 1) {
+    let linha = '';
+    for (let index2 = 0; index2 <= n ; index2 += 1) {
+      if (index2 > n - index) {
+        linha += '*';
+      } else linha += ' ';
+    }
+    console.log(linha);
   }
 }
-inverseTriangle(5);
+meioTriangulo(5);
