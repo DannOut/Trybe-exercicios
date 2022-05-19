@@ -7,3 +7,8 @@ Retorno esperado: true
 verificaFimPalavra('joaofernando', 'fernan');
 Retorno esperado: false
 */
+
+function compareStrings(word,ending){
+  console.log(word,ending);
+}
+compareStrings('trybe','be')
