@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício 5.1</title>
+
+    <style>
+      main,
+      section {
+        border-color: black;
+        border-style: solid;
+      }
+
+      .title {
+        text-align: center;
+      }
+
+      .main-content {
+        background-color: yellow;
+      }
+
+      .main-content .center-content {
+        background-color: red;
+        width: 50%;
+        margin: 0 auto;
+      }
+
+      .main-content .center-content p {
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1 class="title">Exercício 5.1 - JavaEscripito</h1>
+    </header>
+    <main class="main-content">
+      <section class="center-content">
+        <p>Texto padrão do nosso site</p>
+        <p>-----</p>
+        <p>Trybe</p>
+      </section>
+    </main>
+    <script>
+      function changeH1(texto, arrayPos) {
+        let value = document.getElementsByTagName('h1');
+        value[arrayPos].innerText = texto;
+      }
+      changeH1('Exercício 5.1 -JavaScript', 0);
+
+      function changeMainbk(mainColor, arrayPos) {
+        let changeMainColor = document.getElementsByClassName('main-content');
+        changeMainColor[arrayPos].style.backgroundColor = mainColor; // tava esquecendo a CARALHA das aspas no rgb
+      }
+      changeMainbk('rgb(76,164,109)', 0);
+
+      function changeCenter(mainColor) {
+        let changeCenterContent =
+          document.getElementsByClassName('center-content');
+        changeCenterContent[0].style.backgroundColor = mainColor;
+      }
+      changeCenter('rgb(250,250,250');
+
+      function pChanger(texto, arrayPos) {
+        let pText = document.getElementsByTagName('p');
+        pText[arrayPos].innerText = texto;
+      }
+      pChanger('Trabalhando e estudando', 1);
+
+      function lowerCase (){
+        let higher = document.getElementsByTagName('p');
+        for (let index = 0; index < higher.length; index += 1){
+          higher[index].style.textTransform = 'uppercase';
+        }
+      } lowerCase() // 2 HORAS POR QUE EU ESQUECI DE CHAMAR A CARALHA DA FUNÇÃO
+
+      function showTag (){
+        let showP = document.getElementsByTagName('p');
+        for (let index = 0; index < showP.length; index += 1){
+          console.log(showP[index].innerHTML);
+      }
+    } showTag()
+      /*
+        Aqui você vai modificar os elementos já existentes utilizando apenas as funções:
+        - document.getElementById()
+        - document.getElementsByClassName()
+        - document.getElementsByTagName()
+ FEITO Crie uma função que mude o texto na tag <p> para uma descrição de como você se vê daqui a 2 anos.
+ FEITO Crie uma função que mude a cor do quadrado amarelo para o verde da Trybe (rgb(76,164,109)).
+ FEITO Crie uma função que mude a cor do quadrado vermelho para branco.
+ FEITO Crie uma função que corrija o texto da tag <h1>.
+ FEITO Crie uma função que modifique todo o texto da tag <p> para maiúsculo.
+ Crie uma função que exiba o conteúdo de todas as tags <p> no console.
+        */
+    </script>
+  </body>
+</html>
