@@ -75,6 +75,12 @@
         }
       } lowerCase() // 2 HORAS POR QUE EU ESQUECI DE CHAMAR A CARALHA DA FUNÇÃO
 
+      function showTag (){
+        let showP = document.getElementsByTagName('p');
+        for (let index = 0; index < showP.length; index += 1){
+          console.log(showP[index].innerHTML);
+      }
+    } showTag()
       /*
         Aqui você vai modificar os elementos já existentes utilizando apenas as funções:
         - document.getElementById()
