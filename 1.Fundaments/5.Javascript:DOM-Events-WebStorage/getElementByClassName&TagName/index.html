@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <header>
+      <h2 id="page-title">Título</h2>
+      <p id="paragraph" class="parag">Dê uma cor para este parágrafo!</p>
+      <h4 id="subtitle">Subtítulo</h4>
+      <p id="second-paragraph" class="parag">Segundo parágrafo!</p>
+    </header>
+    <script>
+      // tanto getElementeByClassName, quanto getElementeByTags vão ser sempre em forma de array, sendo necessário fazer um search dentro.
+
+      /*       const paragraph = document.getElementById('paragraph'); */
+      /*       paragraph.style.color = 'red'; */
+      let paragraph = document.querySelector('#paragraph');
+      paragraph.style.color = 'red';
+
+      // let parag = document.getElementsByClassName('parag');
+      let parag = document.querySelectorAll('.parag');
+      // fazendo um for para mudar a cor do array para azul
+      for (let index = 0; index < parag.length; index += 1) {
+        parag[index].style.color = 'blue';
+      }
+
+      // document.getElementsByClassName('parag')[0].innerText = 'Daniel';
+      /*       document.querySelectorAll('.parag')[0].innerText = "Daniel"
+      parag[0].style.textAlign = 'center'; */
+
+      parag[0].innerText = 'Daniel';
+      parag[0].style.textAlign = 'center';
+
+/*       let classSubTitle = (document.getElementsByTagName('h4')[0].innerText =
+        'Mudando sacaralha, não to entendendo direito'); */
+
+      let  classTitle = document.querySelector('h4');
+      classTitle.innerText = 'Mudando sacaralha, não to entendendo direito'
+    </script>
+  </body>
+</html>
