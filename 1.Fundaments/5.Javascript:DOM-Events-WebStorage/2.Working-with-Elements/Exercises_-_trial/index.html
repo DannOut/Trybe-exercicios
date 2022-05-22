@@ -81,6 +81,7 @@
         //cria uma main com uma classe a ser escolhida
         let creatingMain = document.createElement('main');
         creatingMain.className = classes;
+        creatingMain.style.cssText = "background-Color: green"
         return creatingMain;
       }
 
@@ -101,6 +102,7 @@
         // cria uma Section com uma classe a ser escolhida
         let creatingSection = document.createElement('section');
         creatingSection.className = classes;
+        creatingSection.style.cssText= "margin-right: auto"; // feito depois, pedido do exercício 13
         return creatingSection;
       }
 
@@ -128,6 +130,7 @@
       function creatingLi(list) { // cria um conteudo para lista LI
         let creatingList = document.createElement('li');
         creatingList.innerText = list;
+        creatingList.className = "listingItens"
         return creatingList;
       
       }
@@ -138,6 +141,11 @@
         createH3.className = classes
         return createH3 
       };
+
+      function removingElements (position, element){ // função que irá remover coisas na posição descrita, e o elemento descrito
+        let removing = position.removeChild(element)
+        return removing;
+      }
 
 
 
@@ -184,7 +192,25 @@
 
       /* ATÉ AQUI, TUDO FOI CRIADO - ABAIXO, SERÁ FEITO OS REMOVES */
 
+      let selectorSectionLeft = document.querySelector('.left-content') // crio um seletor de left-content
+
+     
+
+      removingElements(selectorMain, selectorSectionLeft) // utilizo a função criada lá em cima para remover o filho selectorSectionLeft da posição selectorMain
+
+
+      let selectorList = document.querySelectorAll('.listingItens');
       
+      for (let index = 0; index < selectorList.length; index +=1){
+
+        let list = selectorList[index];
+
+        if ((list.innerText.includes('nove')) || (list.innerText.includes('dez'))  ){
+          selectorList.removeChild();
+        }
+      }
+
+
 
 
 
