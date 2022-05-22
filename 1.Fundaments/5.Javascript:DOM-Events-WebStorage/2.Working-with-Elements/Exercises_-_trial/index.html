@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício 5.2</title>
+    <style>
+      section {
+        border-color: black;
+        border-style: solid;
+      }
+
+      .title {
+        text-align: center;
+      }
+
+      .main-content {
+        background-color: yellow;
+      }
+
+      .main-content .center-content {
+        background-color: red;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .main-content .center-content p {
+        font-style: italic;
+        text-align: center; /* Daniel que adicionou */
+      }
+
+      .main-content .left-content {
+        background-color: green;
+        width: 60%;
+        margin-left: 0;
+        margin-right: auto;
+      }
+
+      .main-content .left-content .small-image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 100%;
+      }
+
+      .main-content .right-content {
+        background-color: blue;
+        width: 60%;
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      .main-content .description {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      // COLOQUE SEU CÓDIGO AQUI
+      let nonOrderList = [
+        'um',
+        'dois',
+        'três',
+        'quatro',
+        'cinco',
+        'seis',
+        'sete',
+        'oito',
+        'nove',
+        'dez',
+      ];
+
+      // SELETORES DO BODY
+      let selectorBody = document.querySelector('body'); // seleciona o body
+
+      //FUNCTIONS
+
+      function createMainElement(classes) {
+        //cria uma main com uma classe a ser escolhida
+        let creatingMain = document.createElement('main');
+        creatingMain.className = classes;
+        return creatingMain;
+      }
+
+      function addElementAsChild(local, elemento) {
+        // function to add as child é a cola que liga ao html
+        local.appendChild(elemento);
+      }
+
+      function createH1Element(myText) {
+        // cria um H1 com uma classe a ser escolhida
+        let creatingH1 = document.createElement('h1');
+        creatingH1.innerHTML = myText;
+        return creatingH1;
+      }
+
+      function createSectionElement(classes) {
+        // cria uma Section com uma classe a ser escolhida
+        let creatingSection = document.createElement('section');
+        creatingSection.className = classes;
+        return creatingSection;
+      }
+
+      function creatingParagElement(classes) {
+        // cria um paragrafo e coloca um texto nele
+        let creatingP = document.createElement('p');
+        creatingP.innerHTML = classes;
+        return creatingP;
+      }
+
+      function creatingImageElement(source, classes) {
+        //cria uma umagem e adiciono uma src e uma classe a ela
+        let creatingImage = document.createElement('img');
+        creatingImage.src = source;
+        creatingImage.className = classes;
+        return creatingImage;
+      }
+
+      function creatingNonOrderList(classes) { // cria uma lista não ordenada e uma classe a ela
+        let creatingNonOrder = document.createElement('ul');
+        creatingNonOrder.className = classes;
+        return creatingNonOrder;
+      }
+
+      function creatingLi(list) { // cria um conteudo para lista LI
+        let creatingList = document.createElement('li');
+        creatingList.innerText = list;
+        return creatingList;
+      
+      }
+
+      function creatingH3 (text){
+        let createH3 = document.createElement ('h3');
+        createH3.innerText = text
+        return createH3 
+      };
+
+
+
+      // END FUNCTION
+
+      addElementAsChild(selectorBody, createH1Element('Exercício 5.2')); // adicionando texto ao H1
+      addElementAsChild(selectorBody, createMainElement('main-content')); // adicionando classe ao Main element
+
+      let selectorMain = document.querySelector('main'); // criando um seletor para a main // precisa estar depois da criação do pai body
+
+      addElementAsChild(selectorMain, createSectionElement('center-content')); // adicionando uma section, com classe center-content, que é filho de main
+
+      addElementAsChild(
+        selectorMain.firstElementChild,
+        creatingParagElement('Daniel estudando DOM')
+      ); //adicionando a posição section (que é filho da main) o texto
+
+      addElementAsChild(selectorMain, createSectionElement('left-content')); // adicionando uma section, com classe left-content, que é filho de main
+
+      addElementAsChild(selectorMain, createSectionElement('right-content')); // adicionando uma section, com classe right-content, que é filho de main
+
+      addElementAsChild(
+        // adicionando uma imagem a section com a classe left-contenc, que é filho da main e irmão das outras sections
+        selectorMain.firstChild.nextSibling,
+        creatingImageElement('https://picsum.photos/200', 'small-image')
+      );
+
+      addElementAsChild(selectorMain.lastChild, creatingNonOrderList('')); // criando a UL sem classe, que pe filho da main e irmão das outras sections
+
+      let selectorUL = document.querySelector('.right-content'); // criando um seletor para a lista não ordenada // precisa estar depois da criação do pai Main
+            
+
+      for (let myList of nonOrderList){ // cria um for of, que cria uma variavel chamado myList, que procura os valores dentro de nonOrderList
+        let input = creatingLi(myList);// cria a variavel input que vai pegar a função creatingLI e povoar com os valores do array myList
+        addElementAsChild(selectorUL, input); // traz a função addElementAsChild que liga a variavel input que tem os valores para dentro da UL criada chamada SelectorUL
+
+      }
+
+      for (let index = 0; index < 3; index += 1){ // cria um for para adicionar 3 H3 dentro dos parâmetros do for
+        let h3Povoated = creatingH3('Eu sou o h3 na posição: '+[index]); //povoa a variavel com a função creatingH3 resposavel por criar e adicionar um texto a ela
+        addElementAsChild(selectorMain, h3Povoated) // adiciona como filho de Main com as informações de h3
+
+      }
+
+
+
+    </script>
+  </body>
+</html>
