@@ -200,16 +200,20 @@
 
 
       let selectorList = document.querySelectorAll('.listingItens');
-      
+      // criei um seletor, que selecionou toda a lista LI
+
       for (let index = 0; index < selectorList.length; index +=1){
+        // criei uma estrutura de repetição para percorrer toda a lista LI
 
         let list = selectorList[index];
+        // atribui a variavel a cada valor da lista LI, que será pego a cada rotação
 
         if ((list.innerText.includes('nove')) || (list.innerText.includes('dez'))  ){
-         //selectorList.removechild(); 
-        selectorUL.removeChild(list)       }
+        // fiz uma condicional pegando apenas os arrays que tivessem a palavra 'nove' e 'dez'  
+         
+        selectorUL.removeChild(list)       } // selecionei o pai de LI, no caso o UL para remover o filho que eu queria, no caso a list
       }
-
+      // criei um seletor, que selecionou toda a lista LI
 
 
 
