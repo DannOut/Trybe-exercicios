@@ -5,21 +5,21 @@ iAmHere.parentNode.style.background = 'pink';
 
 document.getElementById('primeiroFilhoDoFilho').innerText = 'Daniel';
 
-document.getElementById('pai').firstElementChild.innerText = 'desentes';
+document.getElementById('pai').firstElementChild.innerText = 'ESTUDO';
 
 iAmHere.previousElementSibling.style =
   'background-color: red;font-size:20px;color:white';
 
-console.log(iAmHere.parentNode.innerText);
+//console.log(iAmHere.parentNode.innerText);
 
 iAmHere.parentNode.style.background = 'green';
 
 iAmHere.nextElementSibling.style.background = 'orange';
-console.log(iAmHere.nextElementSibling);
+//console.log(iAmHere.nextElementSibling);
 
-console.log(
-  document.getElementById('pai').lastElementChild.previousElementSibling
-); //demorei a entender
+//console.log(
+  //document.getElementById('pai').lastElementChild.previousElementSibling
+//); //demorei a entender
 //verificar na monitoria
 
 // CREATING ELEMENTS
@@ -45,16 +45,22 @@ firstGrankid.appendChild(grandSonKid);
 
 let lastAcess = document.getElementsByTagName('p')[0];
 
-console.log(lastAcess.parentElement.parentElement.nextSibling.nextSibling);
+//console.log(lastAcess.parentElement.parentElement.nextSibling.nextSibling);
 
 // document.querySelector('#quartoEUltimoFilho').remove();
 // document.querySelector('#primeiroFilho').remove();
 
-let elements = ( document.querySelectorAll('section'));
+let elements = document.querySelector('#paiDoPai');
+let elementsDad = elements.firstElementChild;
+
+for (let index = 0; index < elementsDad.children.length; index +=1){
+  //console.log(elementsDad.children[index]);
+  if (elementsDad.children[index].innerHTML.includes('elementoOndeVoceEsta')){
+
+  } else elementsDad.removeChild();
+
+}
 
 
-for (let index = 0; index < elements.length -1; index +=1){
-//console.log(elements.length);
-if ((elements[index]) !== (elements[index].id('#pai'))){
-  elements.remove()
-}}
+/* Remova todos os elementos filhos de paiDoPai exceto pai, elementoOndeVoceEsta e primeiroFilhoDoFilho. */
+// terceiro filho
