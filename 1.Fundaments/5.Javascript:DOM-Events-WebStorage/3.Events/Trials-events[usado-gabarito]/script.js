@@ -25,9 +25,6 @@ createDaysOfTheWeek();
 
 // Windows ONLOAD
 window.onload = function () {
-  preencherDays();
-  holidaySaints();
-  friday();
   createHolidayButton('Feriados');
   displayHolidays();
   createFridayButtom('Sexta-Feira');
@@ -37,6 +34,7 @@ window.onload = function () {
   newTaskSpan('Aprender Events');
   changeTaskColor('green');
   setTaskClass();
+  setDayColor();
 };
 
 const buttonContainer = document.querySelector('.btn-holiday');
@@ -86,6 +84,10 @@ function friday() {
     }
   }
 }
+preencherDays();
+holidaySaints();
+friday();
+
 //EXERCICIO 2
 function createHolidayButton(buttonName) {
   let buttonContainer = document.querySelector('.buttons-container');
@@ -183,16 +185,35 @@ function changeTaskColor(color) {
 //EXERCICIO 9
 
 function setTaskClass() {
-  let myTasks = document.querySelector('.task');
   let selectedTask = document.getElementsByClassName('task selected');
+  let myTasks = document.querySelector('.task');
 
   myTasks.addEventListener('click', function (event) {
     if (selectedTask.length === 0) {
       //como a classe não existe, colocamos igual a 0 para atribuir ela, e no else, como ela existe, ela volta a ser o que era antes
-      console.log(selectedTask);
+      //console.log(selectedTask);
       event.target.className = 'task selected';
     } else {
       event.target.className = 'task';
     }
   });
 }
+
+//EXERCICIO 10
+
+function setDayColor() {
+  let selectedTask = document.getElementsByClassName('task selected');
+  let days = document.querySelector('#days');
+  let taskDiv = document.querySelector('.task');
+  let taskColor = taskDiv.style.backgroundColor;
+  
+  days.addEventListener('click', function(event){
+    let eventTargetColor = event.target.style.color;
+    if (selectedTask.length > 0 && eventTargetColor !== taskColor) {
+      let color = selectedTask[0].style.backgroundColor;
+      event.target.style.color = color;
+    } else if (eventTargetColor === taskColor && selectedTask.length !== 0) {
+      event.target.style.color = 'rgb(119,119,119)';
+    }
+  });
+};
