@@ -31,33 +31,38 @@ function resetText(event) {
   // que retorna o objeto que disparou o evento.
 }
 
-const addTech = (event) => (event.target.className = 'tech'); //Arrow
-for (index = 0; index < allLi.length; index += 1) {
-  allLi[index].addEventListener('click', addTech);
+function ChangeTech(event) {
+  const techElement = document.querySelector('.tech');
+  techElement.classList.remove('tech'); // removendo todas as classes Tech de quem tem o function
+  event.target.classList.add('tech'); // adicionando a class tech para todo o item que for clicado, assim um item só fica com a classe tag por vez.
+  input.value = ''; // responsavel por limpar o texto
 }
 
-function changeTextFirstLi() {
-  for (let index = 0; index < allLi.length; index +=1){
-    allLi[index].innerText = input.value;
-  }
-}
-
-function redirectMypage (event){
-  //window.location.replace ('https://dannout.github.io');
-  window.open("https://dannout.github.io", "_blank");
- myWebpage.style.backgroundColor = 'blue'
-}
-
-
-
-
-myWebpage.addEventListener('mouseover', redirectMypage);
-myWebpage.addEventListener('dblclick', redirectMypage);
+firstLi.addEventListener('click', ChangeTech);
+secondLi.addEventListener('click', ChangeTech);
+thirdLi.addEventListener('click', ChangeTech);
 firstLi.addEventListener('dblclick', resetText);
-secondLi.addEventListener('dblclick', resetText);
-thirdLi.addEventListener('dblclick', resetText);
-input.addEventListener('input', changeTextFirstLi);
+
+input.addEventListener('input', function (event) {
+  const techElement = document.querySelector('.tech');
+  techElement.innerText = event.target.value;
+});
+
+myWebpage.addEventListener('dblclick', function () {
+  window.location.replace('https://blog.betrybe.com/');
+  // se eu quisesse criar uma nova aba, usaria window.open ('https://blog.betrybe.com/', '_blank')
+});
+
+myWebpage.addEventListener('mouseover', function (event) {
+  event.target.style.color = 'red';
+});
+myWebpage.addEventListener('mouseout', function (event) {
+  event.target.style.color = 'unset'; // unset reseta o estilo da fonte qundo o mouse sair (mouseout)
+});
 
 // Não precisa passar o parâmetro dentro da callback resetText. O próprio
 // navegador fará esse trabalho por você, não é legal? Desse jeito, o
 // event.target na nossa função retornará o objeto 'firstLi'.
+
+// classname = remove as classes e atribui as novas que você está colocando
+// classList = adiciona e remove classes sem afetar as outras.
