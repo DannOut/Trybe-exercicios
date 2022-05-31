@@ -3,21 +3,32 @@ body {
 }
 
 #base{
-border: 3px solid blue;
+border: 3px solid black;
 padding: 0px;
 align-items: center;
-width: 800px;
-height: 500px;
+width: 512px;
+height: 530px;
 margin: auto;
+margin-top:200px;
 
 }
 
 .quadrado {
-  border: 4px solid black;
+  border: 1px solid black;
   height: 100px;
   width: 100px;
   display: inline-block;
-  background-color: green;
-  margin: auto;
   align-items: center;
+  padding: 0px;
+
+}
+
+.fillColor {
+    border: 1px solid black;
+    height: 100px;
+    width: 100px;
+    display: inline-block;
+    align-items: center;
+    padding: 0px;
+  
 }
