@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="/node_modules/bulma/css/bulma.min.css" />
+    <title>Exercícios 6.1</title>
+  </head>
+  <body class="hero-body">
+    <header class="hero">
+      <h1 class="title is-1 is-spaced">Formulário trybe</h1>
+    </heade>
+    <main>
+      <div id="nameEmail">
+        <form action="" method="get">
+          <label class="subtitle" for="username">Nome:</label>
+          <input
+          type="text"
+          name="Nome"
+          id="username"
+          min="10"
+          max="40"
+          class="input is-primary"
+          required
+          />
+      </div>
+      <div id="nameEmail">
+        <label class="subtitle" for="email">Email:</label>
+        <input
+          type="text"
+          name="email"
+          id="email"
+          min="10"
+          max="50"
+          class="input is-primary"
+          required
+        />
+      </div>
+        <div id="placesDiv" >
+        <input class="radio" type="radio" name="places" id="city" />
+        <label class="radio" for="places">Cidade</label>
+        <input class="radio" type="radio" name="places" id="camp" />
+        <label class="radio" for="places">Campo</label>
+        <input class="radio" type="radio" name="places" id="beach" />
+        <label class="radio" for="places">Praia</label>
+        <input class="radio" type="radio" name="places" id="mountains" />
+        <label class="radio" for="places">Montanhas</label>
+      </div>
+      <div id="responseDiv">
+        <label class="content is-normal" for="response" id="labelResponse">Espaço para digitar a resposta:</label>
+        <br>
+        <textarea class="textarea is-focused is-success" name="" id="response" cols="35" rows="8" maxlength="500" style="resize:none" ></textarea>
+      </div>
+      <div>
+        <label for="date">Data</label>
+        <input type="date" name="date" id="date" required>
+      </div>
+      <div class="file has-name is-left is-info">
+        <label class="file-label">
+          <input class="file-input" type="file" name="resume">
+          <span class="file-cta">
+            <span class="file-icon">
+              <i class="fas fa-upload"></i>
+            </span>
+            <span class="file-label">
+              Choose a file…
+            </span>
+          </span>
+        </label>
+      </div>
+      <div>
+        <label class="checkbox" for="offers1">Termos de contrato</label>
+        <input  type="checkbox" name="offers1" id="offers1" required>
+        <br>
+        <label class="checkbox" class="content is-normal" for="offers2">Receber promoções</label>
+        <input type="checkbox" name="offers2" id="offers2">
+      </div>
+      <div>
+        <label class="content" for="send"></label>
+        <input class="button is-success" type="submit" value="Enviar" id="send">
+        <label for="reset"></label>
+        <input class="button is-danger" type="reset" value="Apagar" id="reset">
+      </div>
+      </form>
+    </main>
+  </body>
+</html>
+
