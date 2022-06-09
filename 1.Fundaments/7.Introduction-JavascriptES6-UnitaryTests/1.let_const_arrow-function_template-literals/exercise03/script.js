@@ -8,7 +8,6 @@ const setItem = (keyname, value) => localStorage.setItem(keyname, value);
 const getItem = (keyname) => localStorage.getItem(keyname);
 
 // onClick
-
 panicBtn.addEventListener('click', () => {
   let clickCount = !getItem('counter') ? 0 : Number(getItem('counter'));
 
