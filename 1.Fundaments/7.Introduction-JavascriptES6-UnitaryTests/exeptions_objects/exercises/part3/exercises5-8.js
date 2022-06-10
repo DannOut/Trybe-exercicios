@@ -27,24 +27,25 @@ const allLessons = Object.assign({}, { lesson1 }, { lesson2 }, { lesson3 });
 /* console.log(allLessons); */
 
 // Question 06
-  // verificar com a Isa amanha
+// verificar com a Isa amanha
 const allStudents = (object) => {
   let counter = 0;
   const students = Object.values(object);
-  for (let i = 0; i < students.length; i += 1) {
-    counter = students[i].numeroEstudantes + counter;
+  console.log(students);
+  for (let key in students) {
+    counter += students[key].numeroEstudantes;
   }
-/*   console.log(counter); */
+/*     console.log(counter); */
 };
 allStudents(allLessons);
 
 // Question 07
 
 const position = (innerObject, position) => {
-const myLessons = allLessons[innerObject];
-const key = Object.values(myLessons)[position];
-console.log(key);
-
+  const myLessons = allLessons[innerObject];
+  console.log(myLessons);
+  const key = Object.values(myLessons)[position];
+  console.log(key);
 };
 position('lesson1', 0);
 
