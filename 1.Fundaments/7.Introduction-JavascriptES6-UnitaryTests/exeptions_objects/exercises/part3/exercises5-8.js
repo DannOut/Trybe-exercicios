@@ -47,3 +47,12 @@ console.log(key);
 
 };
 position('lesson1', 0);
+
+//Question 08
+
+/* const verifyPair = (object, key, value) => {
+  const base = Object.keys(allLessons);
+  const objecting = base[object];
+  console.log(objecting);
+}
+verifyPair (lesson1) */
