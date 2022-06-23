@@ -5,10 +5,7 @@ const musicas = [
 ];
 
 function findMusic(id) {
-  // Adicione seu código aqui
-  const value = musicas.find((musica) => {
-    return id === musica.id ? musica.title : null;
-  });
+  const value = musicas.find((musica) => id === musica.id ? musica.title : false);
   return value.title;
 }
 
