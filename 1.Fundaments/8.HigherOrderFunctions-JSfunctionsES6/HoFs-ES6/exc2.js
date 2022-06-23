@@ -1,6 +1,6 @@
 // minha função com 1 parãmetro
 const lottery = (gameNumber) => {
-  const randomNumber = Math.ceil(Math.random() * 6);
+  const randomNumber = Math.round(Math.random() * 6);
 const winner = () =>
     gameNumber === randomNumber
       ? 'Parabéns você ganhou!'
