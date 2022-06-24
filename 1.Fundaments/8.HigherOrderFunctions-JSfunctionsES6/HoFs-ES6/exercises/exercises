@@ -122,11 +122,14 @@ function someBookWasReleaseOnThe80s() {
 // Faça uma função que retorne true, caso nenhum author tenha nascido no mesmo ano, e false, caso contrário.
 function authorUnique() {
   // escreva seu código aqui
-  return books.every((book) =>
-    !books.some((bookSome) => {
-     return bookSome.author.birthYear === book.author.birthYear &&
-        bookSome.author.name !== book.author.name;
-    })
+  return books.every(
+    (book) =>
+      !books.some((bookSome) => {
+        return (
+          bookSome.author.birthYear === book.author.birthYear &&
+          bookSome.author.name !== book.author.name
+        );
+      })
   );
 }
 
