@@ -1,0 +1,10 @@
+const names = ['Mateus', 'José', 'Ana', 'Cláudia', 'Bruna'];
+
+const teste = (arr, name) => arr.some(curr => {
+  console.log(`${curr} é igual a ${name}? Resposta: ${curr === name}`);
+  return curr === name;
+});
+
+// Logs
+console.log(teste(names, 'Ana')); // true scenario
+console.log(teste(names, 'Josefina')); // false scenario
