@@ -107,3 +107,27 @@ function everyoneWasBornOnSecXX() {
   });
 }
 // console.log(everyoneWasBornOnSecXX());
+
+//Q06
+// const expectedResult = true;
+function someBookWasReleaseOnThe80s() {
+  return books.some(
+    (book) => book.releaseYear > 1990 && book.releaseYear <= 2000
+  );
+}
+/* console.log(someBookWasReleaseOnThe80s()); */
+
+//Q07
+// const expectedResult = false;
+// Faça uma função que retorne true, caso nenhum author tenha nascido no mesmo ano, e false, caso contrário.
+function authorUnique() {
+  // escreva seu código aqui
+  return books.every((book) =>
+    !books.some((bookSome) => {
+     return bookSome.author.birthYear === book.author.birthYear &&
+        bookSome.author.name !== book.author.name;
+    })
+  );
+}
+
+console.log(authorUnique());
