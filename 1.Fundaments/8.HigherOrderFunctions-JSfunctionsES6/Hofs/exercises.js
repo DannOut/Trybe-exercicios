@@ -66,9 +66,10 @@ const books = [
 
 //Q01
 const arrayNameGenreWriter = () =>
-  books.map(
-    (valueIndice) =>
-      console.log(`${valueIndice.name} - ${valueIndice.genre} - ${valueIndice.author.name}`)
+  books.map((valueIndice) =>
+    console.log(
+      `${valueIndice.name} - ${valueIndice.genre} - ${valueIndice.author.name}`
+    )
   );
 // arrayNameGenreWriter();
 
@@ -89,3 +90,44 @@ const arrayAgeAuthor = () => {
 // arrayAgeAuthor();
 
 //Q03
+// slow and steady
+const fantasyOrScienceFictionTipped = () => {
+  const ficFanty = [];
+  books.filter((book) => {
+    if (book.genre === 'Fantasia' || book.genre === 'Ficção Científica') {
+      ficFanty.push(book);
+    }
+  });
+  return ficFanty;
+};
+// console.log(fantasyOrScienceFictionTipped());
+
+//One Liner
+const fantasyOrScienceFictionOneLiner = () =>
+  books.filter((book) =>
+    book.genre === 'Fantasia' || book.genre === 'Ficção Científica'
+      ? book
+      : null
+  );
+// console.log(fantasyOrScienceFictionOneLiner());
+
+
+//Q04
+// slow and steady
+function oldBooksOrderedTipped() {
+  const oldBooks = [];
+  const actualYear = 2022;
+  books.filter((book) => {
+    if (actualYear - book.releaseYear > 60) {
+      oldBooks.push(book);
+    }
+  });
+  return oldBooks.sort((a,b) => a.releaseYear - b.releaseYear)
+}
+// console.log(oldBooksOrdered());
+
+const oldBooksOrderedOneLiner = () => books.filter((book) => ((2022 - book.releaseYear > 60) ? book : null)).sort((a,b) => a.releaseYear - b.releaseYear);
+// console.log(oldBooksOrderedOneLiner());
+
+
+//Q05
