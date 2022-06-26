@@ -68,20 +68,24 @@ const books = [
 const arrayNameGenreWriter = () =>
   books.map(
     (valueIndice) =>
-      `${valueIndice.name} - ${valueIndice.genre} - ${valueIndice.author.name}`
+      console.log(`${valueIndice.name} - ${valueIndice.genre} - ${valueIndice.author.name}`)
   );
-// console.log(arrayNameGenreWriter());
+// arrayNameGenreWriter();
 
 //Q02
 const arrayAgeAuthor = () => {
   const ageRelease = [];
+  // criando o novo objeto com age e o nome do autor
   books.map((teste) => {
     ageRelease.push({
       age: teste.releaseYear - teste.author.birthYear,
       author: teste.author.name,
     });
+    //ordenando por age
     ageRelease.sort((a, b) => a.age - b.age);
   });
   return console.log(ageRelease);
 };
-arrayAgeAuthor();
+// arrayAgeAuthor();
+
+//Q03
