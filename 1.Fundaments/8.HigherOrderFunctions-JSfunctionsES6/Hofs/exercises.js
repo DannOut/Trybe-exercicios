@@ -111,7 +111,6 @@ const fantasyOrScienceFictionOneLiner = () =>
   );
 // console.log(fantasyOrScienceFictionOneLiner());
 
-
 //Q04
 // slow and steady
 function oldBooksOrderedTipped() {
@@ -122,12 +121,40 @@ function oldBooksOrderedTipped() {
       oldBooks.push(book);
     }
   });
-  return oldBooks.sort((a,b) => a.releaseYear - b.releaseYear)
+  return oldBooks.sort((a, b) => a.releaseYear - b.releaseYear);
 }
 // console.log(oldBooksOrdered());
 
-const oldBooksOrderedOneLiner = () => books.filter((book) => ((2022 - book.releaseYear > 60) ? book : null)).sort((a,b) => a.releaseYear - b.releaseYear);
+// One Liner
+const oldBooksOrderedOneLiner = () =>
+  books
+    .filter((book) => (2022 - book.releaseYear > 60 ? book : null))
+    .sort((a, b) => a.releaseYear - b.releaseYear);
 // console.log(oldBooksOrderedOneLiner());
 
-
 //Q05
+// One Liner
+const fantasyOrScienceFictionMap = () =>
+  books
+    .filter((book) =>
+      book.genre === 'Fantasia' || book.genre === 'Ficção Científica'
+        ? book
+        : null
+    )
+    .map((elements) => elements.author.name)
+    .sort();
+
+// console.log(fantasyOrScienceFictionMap());
+
+//Q06
+// One Liner
+const oldBooksOrderedOneLinerMAP = () =>
+  books
+    .filter((book) => (2022 - book.releaseYear > 60 ? book : null))
+    .sort((a, b) => a.releaseYear - b.releaseYear)
+    .map((element) => element.name);
+// console.log(oldBooksOrderedOneLinerMAP());
+
+//Q07
+// One Liner
+
