@@ -157,11 +157,16 @@ const oldBooksOrderedOneLinerMAP = () =>
 
 //Q07
 function authorWith3DotsOnName() {
-return books.filter((element) => {
-if ( element.author.name[1] === '.' && element.author.name[4] === '.' && element.author.name[7] === '.'){
-  return element;
-}
-}).map((element) => element.name)
-
+  return books
+    .filter((element) => {
+      if (
+        element.author.name[1] === '.' &&
+        element.author.name[4] === '.' &&
+        element.author.name[7] === '.'
+      ) {
+        return element;
+      }
+    })
+    .map((element) => element.name);
 }
 console.log(authorWith3DotsOnName());
