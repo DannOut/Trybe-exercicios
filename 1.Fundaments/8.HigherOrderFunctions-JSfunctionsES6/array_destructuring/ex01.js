@@ -9,6 +9,3 @@ console.log(fourthCountry); // Canada
 
 
 
-
-const str = 'daniel ( outeiro ) ( dos ) (santos)';
-console.log(str.replace(/[\(|\)]+/g, ''))
