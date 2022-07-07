@@ -4,11 +4,10 @@ const uppercase = (str, callback) => {
   }, 500);
 };
 
-
 it('uppercase "test" to equal "TEST"', (done) => {
-  uppercase('test', (str) => {
+  uppercase('test', (naruto) => {
     try {
-      expect(str).toBe('TEST');
+      expect(naruto).toBe('TEST');
       done();
     } catch (error) {
       done(error);
@@ -23,3 +22,4 @@ it('uppercase "test" to equal "TEST"', (done) => {
     }
   })
 });
+
