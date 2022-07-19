@@ -1,0 +1,15 @@
+.all-pokemons {
+  background-image: url(../img/wallpapersden.com_p2jpg);
+  background-size: cover;
+  display: flex;
+  flex-flow: wrap;
+  gap: 2px;
+}
+
+.pokemon-div {
+  display: flex;
+  border: 2px solid black;
+  flex-flow: wrap;
+  height: 250px;
+  width: 13em;
+}
