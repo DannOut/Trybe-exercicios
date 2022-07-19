@@ -26,15 +26,15 @@ const conteudos = [
 class Content extends Component {
   render() {
     return (
-      <>
+      <div className="content">
         {conteudos.map(({ conteudo, bloco, status }) => (
-          <div className='content' key={conteudo}>
+          <div className="card" key={conteudo}>
             <h4>O conteúdo é: {conteudo}</h4>
             <h4>Status: {status}</h4>
             <h4>Status: {bloco}</h4>
           </div>
         ))}
-      </>
+      </div>
     );
   }
 }
