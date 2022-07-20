@@ -4,9 +4,9 @@ body {
   background-image: url(../img/QavClY.png);
   background-size: cover;
   /* vh referente ao tamnho da tela de quem está acessando height*/
-  /* min-height: 100vh;
+  min-height: 100vh;
   /* mesma coisa só que para width */
-  /* max-width: 100vw; */
+  max-width: 100vw;
   background-repeat: no-repeat;
   background-position: right;
   margin: 0%;
@@ -19,7 +19,7 @@ body {
   justify-content: center;
   align-content: flex-start;
   max-width: 100vw;
-  min-height: 100vh;
+  min-height: 90vh;
   margin-top: 10px;
 }
 .pokemon-div {
@@ -68,6 +68,7 @@ body {
 .pokemon-link {
   font-family: 'Press Start 2P', cursive;
   font-size: x-small;
-  color: #0075BE;
+  -webkit-text-stroke: 1px #0075BE;
+  color: #FFCC00;
   text-decoration: none;
 }
