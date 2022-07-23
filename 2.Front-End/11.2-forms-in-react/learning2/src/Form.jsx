@@ -3,6 +3,7 @@ import './Form.css';
 import AnimeChoice from './Components/AnimeChoice';
 import TextInformation from './Components/TextInformation';
 import OtakuChecker from './Components/OtakuChecker';
+import BaseForm from './Components/BaseForm';
 
 class Form extends Component {
   constructor(){
@@ -52,17 +53,19 @@ class Form extends Component {
 
   render() {
     const { animeChoice, textInformation, buttonStatus } = this.state
+    const { sendInfoHandler, handleSubmit } = this
     return (
-      <form className="form" method="get" onSubmit={this.handleSubmit}>
 
-        <AnimeChoice value={animeChoice} sendInfoHandler={this.sendInfoHandler} />
+      <BaseForm handleSubmit={handleSubmit} >
 
-        <TextInformation value={textInformation} sendInfoHandler={this.sendInfoHandler} />
+        <AnimeChoice value={animeChoice} sendInfoHandler={sendInfoHandler} />
 
-        <OtakuChecker type={'checkbox'} sendInfoHandler={this.sendInfoHandler} />
+        <TextInformation value={textInformation} sendInfoHandler={sendInfoHandler} />
+
+        <OtakuChecker type={'checkbox'} sendInfoHandler={sendInfoHandler} />
 
         <button disabled={buttonStatus}>Send Information </button>
-      </form>
+      </BaseForm>
     );
   }
 }
