@@ -6,26 +6,32 @@ class Form extends Component {
     super()
 
     this.sendInfoHandler = this.sendInfoHandler.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
     // this.updateHandler = this.sendInfoHandler.bind(this)
     this.state = {
-      valorDigitado: "",
+      valorTextArea: "",
       animeChoice: "",
       buttonStatus: true,
+      otakuChecker: false,
     }
   }
 
-  sendInfoHandler(event) {
-    // const { name, value } = event.target
-    // this.setState({ [name]: value}, () => {
-      const  { name: stateName , value } = event.target
-      this.setState({[stateName]:value}, () => {
-      const { valorDigitado, animeChoice } = this.state
-      const buttonChecker = valorDigitado.length === 0 || animeChoice.length === 0;
+  sendInfoHandler({ target }) {
+      const  { name } = target
+      const value = target.type === 'checkbox' ? target.checked : target.value
+      this.setState({[name]:value}, () => {
+      const { valorTextArea, animeChoice, otakuChecker } = this.state
+      const buttonChecker = valorTextArea.length === 0 || animeChoice.length === 0 || otakuChecker === false
       this.setState({
         buttonStatus: buttonChecker
       })
     })
-    console.log(event.target);
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    console.log(event)
+    alert('otakera é noix do complexo colômbia')
   }
 
   // sendInfoHandler(event) {
@@ -42,9 +48,9 @@ class Form extends Component {
 
 
   render() {
-    const { animeChoice, valorDigitado, buttonStatus } = this.state
+    const { animeChoice, valorTextArea, buttonStatus } = this.state
     return (
-      <form className="form" method="get">
+      <form className="form" method="get" onSubmit={this.handleSubmit}>
 
         <select name="animeChoice" className='animeChoice' value={animeChoice} onChange={this.sendInfoHandler}>
           <option value=""> Choose </option>
@@ -55,8 +61,25 @@ class Form extends Component {
           <option value="onePiece">One Piece</option>
           <option value="dbz">Dragon Ball Z</option>
         </select>
+
         <textarea 
-        onChange={this.sendInfoHandler} cols="30" rows="3" placeholder='Opinião' className='valorDigitado' value={valorDigitado} name="valorDigitado"></textarea>
+        onChange={this.sendInfoHandler} 
+        cols="30" rows="3" 
+        placeholder='Opinião' 
+        className='valorDigitado' 
+        value={valorTextArea} 
+        name="valorTextArea">
+        </textarea>
+
+        <div>
+        <label htmlFor="otakuChecker" >Otaku</label>
+        <input 
+        type="checkbox" 
+        onChange={this.sendInfoHandler} 
+        name="otakuChecker" 
+        id="otakuChecker"/>
+        </div>
+
         <button disabled={buttonStatus}>Send Information </button>
       </form>
     );
