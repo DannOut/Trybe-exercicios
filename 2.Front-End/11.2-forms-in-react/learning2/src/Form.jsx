@@ -17,7 +17,7 @@ class Form extends Component {
   sendInfoHandler(event) {
     // const { name, value } = event.target
     // this.setState({ [name]: value}, () => {
-      const  { name: stateName , value, classList } = event.target
+      const  { name: stateName , value } = event.target
       this.setState({[stateName]:value}, () => {
       const { valorDigitado, animeChoice } = this.state
       const buttonChecker = valorDigitado.length === 0 || animeChoice.length === 0;
@@ -25,7 +25,7 @@ class Form extends Component {
         buttonStatus: buttonChecker
       })
     })
-    console.log(classList.item[0]);
+    console.log(event.target);
   }
 
   // sendInfoHandler(event) {
