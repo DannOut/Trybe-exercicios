@@ -9,3 +9,7 @@ fieldset {
   width: 180px;
   margin-top: 2px;
 }
+
+textarea {
+  resize: none;
+}

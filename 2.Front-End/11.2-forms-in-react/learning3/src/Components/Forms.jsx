@@ -7,6 +7,9 @@ import Adress from './Inputs/Adress';
 import City from './Inputs/City';
 import State from './Inputs/State';
 import Residence from './Inputs/Residence';
+import Curriculum from './Inputs/Curriculum';
+import JobInfo from './Inputs/JobInfo';
+import JobDescription from './Inputs/JobDescription';
 
 export default class Forms extends Component {
   constructor() {
@@ -20,6 +23,9 @@ export default class Forms extends Component {
       cityField: '',
       stateField: '',
       residence: 'house',
+      curriculum: '',
+      jobInfo: '',
+      jobDescription: '',
     };
   }
 
@@ -46,6 +52,9 @@ export default class Forms extends Component {
       cityField,
       stateField,
       residence,
+      curriculum,
+      jobInfo,
+      jobDescription,
     } = this.state;
 
     const { maxCharacterHandler, changeHandler } = this;
@@ -92,6 +101,27 @@ export default class Forms extends Component {
             name="residence"
             changeHandler={changeHandler}
             checked={residence}
+          />
+        </Fieldset>
+        <Fieldset>
+          <Curriculum
+            name="curriculum"
+            value={curriculum}
+            changeHandler={changeHandler}
+            maxCharacterHandler={maxCharacterHandler}
+          />
+          <JobInfo
+            name="jobInfo"
+            value={jobInfo}
+            changeHandler={changeHandler}
+            maxCharacterHandler={maxCharacterHandler}
+          />
+            
+          <JobDescription
+            name="jobDescription"
+            value={jobDescription}
+            changeHandler={changeHandler}
+            maxCharacterHandler={maxCharacterHandler}
           />
         </Fieldset>
       </form>
