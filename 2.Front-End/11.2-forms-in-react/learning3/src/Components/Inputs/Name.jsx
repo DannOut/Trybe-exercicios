@@ -1,19 +1,30 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 export default class Name extends Component {
   render() {
-    const { maxNameLenght, nameField, changeHandler, name } = this.props
+    // desconstrução do campo nome
+    const { maxCharacterName, changeHandler, name, type } = this.props;
+
+    let error = undefined;
+    const nameField = () => {
+      if (maxCharacterName.length > 10) error = 'text error!';
+      return error ? alert(error) : '';
+    };
 
     return (
-      <div className='nome'>
-      <label htmlFor="name">Nome: </label>
-      <input type="text" 
-      name={name}
-      id="name" 
-      value={nameField} 
-      maxLength={maxNameLenght} 
-      onChange={changeHandler} />
+      <div className="input">
+        <label htmlFor="input">
+          Nome:
+          <input
+            type={type}
+            value={maxCharacterName}
+            name={name}
+            id="input"
+            onChange={changeHandler}
+          />
+          <span> {nameField()} </span>
+        </label>
       </div>
-    )
+    );
   }
 }
