@@ -34,7 +34,6 @@ class Form extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log(event)
     alert('otakera é noix do complexo colômbia')
   }
 
