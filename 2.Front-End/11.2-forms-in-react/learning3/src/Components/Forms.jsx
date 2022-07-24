@@ -6,24 +6,26 @@ import IDfield from './Inputs/IDfield';
 import Adress from './Inputs/Adress';
 import City from './Inputs/City';
 import State from './Inputs/State';
+import Residence from './Inputs/Residence';
 
 export default class Forms extends Component {
   constructor() {
     super();
     this.changeHandler = this.changeHandler.bind(this);
     this.state = {
-      nameField: "",
-      emailField: "",
-      idField: "",
-      adressField: "",
-      cityField: "",
-      stateField: "",
+      nameField: '',
+      emailField: '',
+      idField: '',
+      adressField: '',
+      cityField: '',
+      stateField: '',
+      residence: 'house',
     };
   }
 
   changeHandler({ target }) {
-    const { name, value } = target;
-
+    const { name } = target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
     this.setState({ [name]: value });
   }
 
@@ -32,12 +34,21 @@ export default class Forms extends Component {
   maxCharacterHandler(maxLength, value) {
     let error = undefined;
     if (value.length > maxLength) error = `Máximo de ${maxLength} caractéres`;
-    return error ? alert(error) : "";
+    return error ? alert(error) : '';
   }
 
   render() {
-    const { nameField, emailField, idField, adressField, cityField, stateField } = this.state;
-    const { maxCharacterHandler, changeHandler } = this
+    const {
+      nameField,
+      emailField,
+      idField,
+      adressField,
+      cityField,
+      stateField,
+      residence,
+    } = this.state;
+
+    const { maxCharacterHandler, changeHandler } = this;
 
     return (
       <form className="form" method="get">
@@ -67,15 +78,20 @@ export default class Forms extends Component {
             maxCharacterHandler={maxCharacterHandler}
           />
           <City
-          name="cityField"
-          value={cityField}
-          changeHandler={changeHandler}
-          maxCharacterHandler={maxCharacterHandler}
+            name="cityField"
+            value={cityField}
+            changeHandler={changeHandler}
+            maxCharacterHandler={maxCharacterHandler}
           />
-          <State 
-          name="stateField"
-          value={stateField}
-          changeHandler={changeHandler}
+          <State
+            name="stateField"
+            value={stateField}
+            changeHandler={changeHandler}
+          />
+          <Residence
+            name="residence"
+            changeHandler={changeHandler}
+            checked={residence}
           />
         </Fieldset>
       </form>

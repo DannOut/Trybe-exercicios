@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from "react"
 import StatesData from  "../Data/StatesData"
 
 export default class State extends Component {
