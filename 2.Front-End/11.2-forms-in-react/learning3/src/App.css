@@ -1,0 +1,11 @@
+
+fieldset {
+  display: flex;
+  flex-flow: column;
+  align-items:flex-start;
+}
+
+.inputs {
+  width: 180px;
+  margin-top: 2px;
+}
