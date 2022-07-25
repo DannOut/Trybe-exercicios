@@ -13,3 +13,8 @@ fieldset {
 textarea {
   resize: none;
 }
+
+.BtnInput {
+  margin-top: 5px;
+  margin-left: 5px;
+}

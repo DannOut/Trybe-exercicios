@@ -10,8 +10,8 @@ import Residence from './Inputs/Residence';
 import Curriculum from './Inputs/Curriculum';
 import JobInfo from './Inputs/JobInfo';
 import JobDescription from './Inputs/JobDescription';
-import SubmitBtn from './Button/SubmitBtn';
-import ClearBtn from './Button/ClearBtn';
+import BtnValidation from './Button/BtnValidation';
+
 
 export default class Forms extends Component {
   constructor() {
@@ -130,10 +130,16 @@ export default class Forms extends Component {
             maxCharacterHandler={maxCharacterHandler}
           />
         </Fieldset>
-        <SubmitBtn
+        <BtnValidation
         disabled={submitBtn}
+        type={"submit"}
+        insideText={"Enviar Dados"}
         />
-        <ClearBtn />
+        <BtnValidation 
+        type={"reset"}
+        insideText={"reset"}
+
+        />
 
       </form>
     );
