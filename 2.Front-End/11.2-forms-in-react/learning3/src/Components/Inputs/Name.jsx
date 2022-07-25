@@ -16,6 +16,7 @@ export default class Name extends Component {
             name={name}
             id="inputName"
             onChange={changeHandler}
+            required
           />
           {/* Checagem de erro  */}
           <span> {maxCharacterHandler(40, value)} </span>

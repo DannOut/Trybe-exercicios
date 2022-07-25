@@ -9,12 +9,12 @@ export default class JobDescription extends Component {
     return (
       <div className="inputjobDesc inputs">
         <label htmlFor="inputjobDesc">
-          Cargo
+          Descrição do Cargo
           <textarea
             type="text"
             rows={4}
             cols={100}
-            placeholder="Insira o Cargo"
+            placeholder="Insira a Descrição do Cargo"
             value={value}
             name={name}
             id="inputjobDesc"

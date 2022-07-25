@@ -10,6 +10,8 @@ import Residence from './Inputs/Residence';
 import Curriculum from './Inputs/Curriculum';
 import JobInfo from './Inputs/JobInfo';
 import JobDescription from './Inputs/JobDescription';
+import SubmitBtn from './Button/SubmitBtn';
+import ClearBtn from './Button/ClearBtn';
 
 export default class Forms extends Component {
   constructor() {
@@ -26,13 +28,16 @@ export default class Forms extends Component {
       curriculum: '',
       jobInfo: '',
       jobDescription: '',
+      submitBtn: true
     };
   }
 
   changeHandler({ target }) {
     const { name } = target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
-    this.setState({ [name]: value });
+    this.setState({ [name]: value }, () => {
+
+    });
   }
 
   // handler to check max length and acuse error if true
@@ -55,6 +60,7 @@ export default class Forms extends Component {
       curriculum,
       jobInfo,
       jobDescription,
+      submitBtn
     } = this.state;
 
     const { maxCharacterHandler, changeHandler } = this;
@@ -64,7 +70,7 @@ export default class Forms extends Component {
         <Fieldset>
           <Name
             name="nameField"
-            value={nameField}
+            value={nameField.toUpperCase()}
             changeHandler={changeHandler}
             maxCharacterHandler={maxCharacterHandler}
           />
@@ -124,6 +130,11 @@ export default class Forms extends Component {
             maxCharacterHandler={maxCharacterHandler}
           />
         </Fieldset>
+        <SubmitBtn
+        disabled={submitBtn}
+        />
+        <ClearBtn />
+
       </form>
     );
   }
