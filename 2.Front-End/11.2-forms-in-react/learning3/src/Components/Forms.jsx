@@ -88,7 +88,7 @@ export default class Forms extends Component {
           />
           <Adress
             name="adressField"
-            value={adressField}
+            value={adressField.replace(/[^a-zA-Z ]/g, "")}
             changeHandler={changeHandler}
             maxCharacterHandler={maxCharacterHandler}
           />

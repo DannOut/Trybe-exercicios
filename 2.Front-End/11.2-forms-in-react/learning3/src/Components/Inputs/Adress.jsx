@@ -14,6 +14,7 @@ export default class Adress extends Component {
           id="inputAdress"
           value= {value} 
           onChange= {changeHandler}
+          required
           />
         </label>
         <span> {maxCharacterHandler(200, value)} </span>
