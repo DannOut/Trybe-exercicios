@@ -14,6 +14,7 @@ export default class Email extends Component {
           id="inputEmail"
           value= {value} 
           onChange= {changeHandler}
+          required
           />
         </label>
         <span> {maxCharacterHandler(50, value)} </span>

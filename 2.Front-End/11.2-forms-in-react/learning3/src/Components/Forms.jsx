@@ -7,6 +7,11 @@ import Adress from './Inputs/Adress';
 import City from './Inputs/City';
 import State from './Inputs/State';
 import Residence from './Inputs/Residence';
+import Curriculum from './Inputs/Curriculum';
+import JobInfo from './Inputs/JobInfo';
+import JobDescription from './Inputs/JobDescription';
+import BtnValidation from './Button/BtnValidation';
+
 
 export default class Forms extends Component {
   constructor() {
@@ -20,13 +25,19 @@ export default class Forms extends Component {
       cityField: '',
       stateField: '',
       residence: 'house',
+      curriculum: '',
+      jobInfo: '',
+      jobDescription: '',
+      submitBtn: true
     };
   }
 
   changeHandler({ target }) {
     const { name } = target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
-    this.setState({ [name]: value });
+    this.setState({ [name]: value }, () => {
+
+    });
   }
 
   // handler to check max length and acuse error if true
@@ -46,6 +57,10 @@ export default class Forms extends Component {
       cityField,
       stateField,
       residence,
+      curriculum,
+      jobInfo,
+      jobDescription,
+      submitBtn
     } = this.state;
 
     const { maxCharacterHandler, changeHandler } = this;
@@ -55,7 +70,7 @@ export default class Forms extends Component {
         <Fieldset>
           <Name
             name="nameField"
-            value={nameField}
+            value={nameField.toUpperCase()}
             changeHandler={changeHandler}
             maxCharacterHandler={maxCharacterHandler}
           />
@@ -73,7 +88,7 @@ export default class Forms extends Component {
           />
           <Adress
             name="adressField"
-            value={adressField}
+            value={adressField.replace(/[^a-zA-Z ]/g, "")}
             changeHandler={changeHandler}
             maxCharacterHandler={maxCharacterHandler}
           />
@@ -94,6 +109,38 @@ export default class Forms extends Component {
             checked={residence}
           />
         </Fieldset>
+        <Fieldset>
+          <Curriculum
+            name="curriculum"
+            value={curriculum}
+            changeHandler={changeHandler}
+            maxCharacterHandler={maxCharacterHandler}
+          />
+          <JobInfo
+            name="jobInfo"
+            value={jobInfo}
+            changeHandler={changeHandler}
+            maxCharacterHandler={maxCharacterHandler}
+          />
+            
+          <JobDescription
+            name="jobDescription"
+            value={jobDescription}
+            changeHandler={changeHandler}
+            maxCharacterHandler={maxCharacterHandler}
+          />
+        </Fieldset>
+        <BtnValidation
+        disabled={submitBtn}
+        type={"submit"}
+        insideText={"Enviar Dados"}
+        />
+        <BtnValidation 
+        type={"reset"}
+        insideText={"reset"}
+
+        />
+
       </form>
     );
   }

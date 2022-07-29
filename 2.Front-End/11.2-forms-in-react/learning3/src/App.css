@@ -9,3 +9,12 @@ fieldset {
   width: 180px;
   margin-top: 2px;
 }
+
+textarea {
+  resize: none;
+}
+
+.BtnInput {
+  margin-top: 5px;
+  margin-left: 5px;
+}

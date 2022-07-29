@@ -16,6 +16,7 @@ export default class IDfield extends Component {
           id="inputID"
           value= {value} 
           onChange= {changeHandler}
+          required
           />
         </label>
         <span> {maxCharacterHandler(11, value)} </span>
