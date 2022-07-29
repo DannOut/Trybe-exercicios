@@ -1,14 +1,25 @@
 import React, { Component } from 'react';
 
 // criando uma variavel que será usada apenas para setar o valor inicial de cada state
-const INITIAL_STATE = {
-  gender: undefined,
-  name: {
-    title: undefined,
-    first: undefined,
-    last: undefined,
-  }
-}
+// email: undefined,
+// name: {
+  //   title: undefined,
+  //   first: undefined,
+  //   last: undefined,
+  // },
+  // login: {
+  //   username: undefined,
+  // },
+  // picure: {
+  //   medium: undefined,
+  // },
+  // dob: {
+  // age: undefined,  
+  // }
+  
+  
+  const INITIAL_STATE =  {};
+// foto e idade do usuário.
 
 export default class App extends Component {
   // setamos o valor inicial de state realizando um spread de toda a informação que existe dentro do INITIAL_STATE
@@ -27,26 +38,31 @@ export default class App extends Component {
     this.setState({
       // veja que no estado inicial da aplicação, o loadingpage é true, pois enquanto a requisição é feita, queremos que uma tela de loading apareça, após a requisição abaixo dessa termine, setamos o loadingpage para false, para assim podermos ter a garantia que toda a informação foi recupada no momento da renderização
       loadingPage: false,
+      values: values
       // estamos usando o segundo parametro do setState para recuparar as informações que queremos, no caso o gender e um spread operator para recuperar tudo dentro do objeto name
-    }, () => {
-      const { ...name } = values
-      this.setState({
-        gender: values.gender,
-        ...name
-      })
     });
   };
     // chamando a função componentDidmount para realizar a atualização da função criada acima, chamamos a didMOunt para termos a garandia que iremos ter as informações necessárias antes que a página seja renderizada
-  componentDidMount() {
-    this.setState({
-      randomPerson: this.fetchURL(),
-    });
+  async componentDidMount() {
+    // this.setState({
+    //   values: await this.fetchURL(),
+    // });
+    this.fetchURL()
+
   }
+
+  // shouldComponentUpdate() {
+  //   const { values, loadingPage } = this.state;
+  //   const age = values.dob.age
+  //   console.log(!loadingPage && age);
+  //   return (age > 50) ? false : true
+  // }
+
   // abaixo estamos rendereizando as informações obtidas acima
   render() {
-    const {loadingPage, gender, name:{ title, first, last } } = this.state;
+    const {loadingPage, values } = this.state;
     const loadingHtmlElement = <span>Loading...</span>
-
+    // console.log(!loadingPage && values.gender);
 
     return (
       <div>
@@ -55,9 +71,12 @@ export default class App extends Component {
         {(loadingPage) 
         ? loadingHtmlElement 
         : (
+          // mais facil tacar tudo que esta aqui para frente em forma de props
           <div>
-            <p> Hello! my name is {first} {last} </p>
-            <p> people say that i'm a {title} {gender}</p>
+            <p>mi nombre: { values.name.first} {values.name.last} </p>
+            <p>Email: { values.email }</p>
+            <p> age: {values.dob.age}</p>
+            <img src={values.picture.large} alt={ values.name.first} />
           </div>  
         )}
       </div>
