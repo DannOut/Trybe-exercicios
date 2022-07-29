@@ -18,7 +18,7 @@ import React, { Component } from 'react';
   // }
   
   
-  const INITIAL_STATE =  {};
+  const INITIAL_STATE = {data:{}};
 // foto e idade do usuário.
 
 export default class App extends Component {
@@ -29,16 +29,16 @@ export default class App extends Component {
     // criei uma conta com a string da API
     const URL = 'https://api.randomuser.me';
     // fiz um fetch para fazer a requisição inicial da API, do qual retorna uma promise
-    const fetched = await fetch(URL);
+    const response = await fetch(URL);
     // fiz um .json para retonar toda a informação dentro da promise
-    const data = await fetched.json();
+    const data = await response.json();
     // estou apenas setando daonde eu quero os meus valores, baseada na informação recebida da API ( regra de negocio)
-    const values = await data.results[0];
+    // const values = await data.results[0];
     // setando o this stage inicial, para ser a ultima coisa a ser realizada, no caso o booleano do loadingpage, caso o loadingpage seja verdadeiro, carregara uma página de loading, caso seja falso, exibira as informações que queremos.
     this.setState({
       // veja que no estado inicial da aplicação, o loadingpage é true, pois enquanto a requisição é feita, queremos que uma tela de loading apareça, após a requisição abaixo dessa termine, setamos o loadingpage para false, para assim podermos ter a garantia que toda a informação foi recupada no momento da renderização
       loadingPage: false,
-      values: values
+      data: data.results[0]
       // estamos usando o segundo parametro do setState para recuparar as informações que queremos, no caso o gender e um spread operator para recuperar tudo dentro do objeto name
     });
   };
@@ -60,9 +60,9 @@ export default class App extends Component {
 
   // abaixo estamos rendereizando as informações obtidas acima
   render() {
-    const {loadingPage, values } = this.state;
+    const {loadingPage, data } = this.state;
     const loadingHtmlElement = <span>Loading...</span>
-    // console.log(!loadingPage && values.gender);
+    // console.log(!loadingPage && data);
 
     return (
       <div>
@@ -73,10 +73,10 @@ export default class App extends Component {
         : (
           // mais facil tacar tudo que esta aqui para frente em forma de props
           <div>
-            <p>mi nombre: { values.name.first} {values.name.last} </p>
-            <p>Email: { values.email }</p>
-            <p> age: {values.dob.age}</p>
-            <img src={values.picture.large} alt={ values.name.first} />
+            <p>mi nombre: { data.name.first} {data.name.last} </p>
+            <p>Email: { data.email }</p>
+            <p> age: {data.dob.age}</p>
+            <img src={data.picture.large} alt={ data.name.first} />
           </div>  
         )}
       </div>
