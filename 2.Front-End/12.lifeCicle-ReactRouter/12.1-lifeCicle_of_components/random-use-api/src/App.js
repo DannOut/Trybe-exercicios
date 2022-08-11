@@ -43,11 +43,12 @@ export default class App extends Component {
     });
   };
     // chamando a função componentDidmount para realizar a atualização da função criada acima, chamamos a didMOunt para termos a garandia que iremos ter as informações necessárias antes que a página seja renderizada
+
   async componentDidMount() {
     // this.setState({
     //   values: await this.fetchURL(),
     // });
-    this.fetchURL()
+    await this.fetchURL()
 
   }
 
