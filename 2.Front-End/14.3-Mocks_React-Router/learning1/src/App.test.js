@@ -20,7 +20,6 @@ describe('teste da aplicação toda', () => {
     const aboutLink = screen.getByRole('link', { name: 'Sobre' });
     expect(aboutLink).toBeInTheDocument();
     userEvent.click(aboutLink);
-
     const { pathname } = history.location;
     expect(pathname).toBe('/about');
 
