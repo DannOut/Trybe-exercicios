@@ -24,6 +24,7 @@ export default class Provider extends Component {
       nextColor: this.nextColor,
     }
     const { children } = this.props;
+    console.log(children);
     return (
       <ColorsContext.Provider value={ context }>
         { children }

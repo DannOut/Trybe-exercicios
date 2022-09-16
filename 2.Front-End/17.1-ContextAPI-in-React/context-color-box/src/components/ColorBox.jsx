@@ -7,9 +7,7 @@ class ColorBox extends React.Component {
 
   render() {
     const { colors, colorIndex, nextColor } = this.context;
-    console.log(this.context);
-    console.log(colors);
-    console.log(colorIndex);
+
     return(
       <button
         type="button"
