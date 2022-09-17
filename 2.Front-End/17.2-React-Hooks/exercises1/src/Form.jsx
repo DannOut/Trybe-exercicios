@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import FormContext from './context/FormContext';
 
 export default function Form() {
   const [form, setForm] = useState({
@@ -7,6 +8,8 @@ export default function Form() {
     city: '',
     module: '',
   });
+
+  const { addData } = useContext(FormContext)
 
   const changeHandler = ({ target: { name, value } }) => {
     setForm((prevState) => ({
@@ -59,7 +62,7 @@ export default function Form() {
             id='fundamentals'
             name='module'
             value='Fundamentos'
-            checked={ form.module === 'Fundamentos'}
+            checked={form.module === 'Fundamentos'}
             onChange={changeHandler}
           />
         </label>
@@ -106,6 +109,15 @@ export default function Form() {
           />
         </label>
       </fieldset>
+      <button
+        type='submit'
+        onClick={(event) => {
+          event.preventDefault();
+          addData(form)
+        }}
+      >
+        Enviar
+      </button>
     </form>
   );
 }

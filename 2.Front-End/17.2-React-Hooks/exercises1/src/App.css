@@ -13,9 +13,27 @@
   }
 }
 
+.naruto {
+  display: flex;
+  
+}
+
+.sasuke {
+  background-color: whitesmoke;
+  border: 2px solid black;
+  width: 10em;
+  padding: 10px;
+  margin-left: 10px;
+  flex-flow: wrap column;
+}
+
 fieldset {
   display: flex;
   flex-flow: column;
+}
+
+ul {
+  list-style-type: none;
 }
 
 label input {

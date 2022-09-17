@@ -1,9 +1,13 @@
-import Form from "./Form";
-import './App.css'
+import Form from './Form';
+import './App.css';
+import StudentsInfo from './StudentsInfo';
 
 function App() {
   return (
-    <Form/>
+    <main>
+      <Form />
+      <StudentsInfo />
+    </main>
   );
 }
 
