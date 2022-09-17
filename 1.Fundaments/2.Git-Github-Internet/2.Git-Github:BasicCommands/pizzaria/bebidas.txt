@@ -1,3 +1,0 @@
-1-coca cola;
-2-água com gás;
-3-água sem gás;
