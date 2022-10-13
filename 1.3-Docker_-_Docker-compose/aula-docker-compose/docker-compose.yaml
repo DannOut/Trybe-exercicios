@@ -30,7 +30,7 @@ services:
     image: betrybe/docker-compose-example-database:v1 # Especificamos a Imagem Docker diretamente.
     restart: always
     volumes:
-      - dados-do-banco:/data/db # nome do disco virtual : caminho no container
+      - ./dados-do-banco:/data/db # nome do disco virtual : caminho no container
     networks:
       - rede-virtual-2
 

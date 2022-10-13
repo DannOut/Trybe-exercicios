@@ -1,4 +1,4 @@
-FROM node:alpine
+FROM node:alpine AS build
 
 WORKDIR /app
 
@@ -9,11 +9,12 @@ WORKDIR /app
 # RUN npm install react-scripts@3.3.1 -g --silent
 
 COPY package*.json .
-COPY . .
-
 RUN npm install 
 
-
+FROM node:alpine
+WORKDIR /app
+COPY --from=build ./app .
 ENTRYPOINT [ "npm", "start" ]
-
 EXPOSE 8080
+
+LABEL manteiner="Daniel Outeiro dos Santos"

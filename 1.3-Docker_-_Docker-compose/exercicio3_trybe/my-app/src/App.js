@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Naruto
+          Sasuke
         </a>
       </header>
     </div>
