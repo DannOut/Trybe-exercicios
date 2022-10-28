@@ -53,6 +53,7 @@ async function newMemberSimpson() {
   await fs.writeFile('./simpsonFamily.json', JSON.stringify(convert));
 }
 
+
 async function changeMemberSimpson() {
   const fileContent = await fs.readFile('./simpsonFamily.json', 'utf-8');
   const convert = JSON.parse(fileContent);
@@ -69,6 +70,6 @@ function main() {
   // filterSimpsonById();
   // newFileSimpson();
   // newMemberSimpson();
-  changeMemberSimpson()
+  // changeMemberSimpson()
 }
 main();
