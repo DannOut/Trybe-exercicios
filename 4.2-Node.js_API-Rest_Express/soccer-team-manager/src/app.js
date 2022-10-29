@@ -18,6 +18,7 @@ const app = express();
 
 app.use(express.json());
 
+//* GET -> PEGA/EXIBE VALOR NA LISTA DE UMA ENTIDADE
 app.get('/teams', (req, res) => res.status(200).json({ teams }));
 
 app.get('/teams/:id', (req, res) => {
@@ -29,19 +30,14 @@ app.get('/teams/:id', (req, res) => {
   res.status(200).json({ searchTeam });
 });
 
-app.delete('/teams/:id', (req, res) => {
-  const { id } = req.params;
-  const arrayPosition = teams.findIndex((team) => team.id === Number(id));
-  teams.splice(arrayPosition, 1);
-  res.status(200).end();
-});
-
+//* CRIA/ADICIONA VALOR NA LISTA DE UMA ENTIDADE
 app.post('/teams', (req, res) => {
   const newTeam = { ...req.body };
   teams.push(newTeam);
   res.status(201).json({ team: newTeam });
 });
 
+//* ATUALIZA VALOR NA LISTA DE UMA ENTIDADE
 app.put('/teams/:id', (req, res) => {
   const { id } = req.params;
   const { name, initials } = req.body;
@@ -52,6 +48,14 @@ app.put('/teams/:id', (req, res) => {
   updateTeam.name = name;
   updateTeam.initials = initials;
   res.status(200).json({ updateTeam });
+});
+
+//* DELETA VALOR NA LISTA DE UMA ENTIDADE
+app.delete('/teams/:id', (req, res) => {
+  const { id } = req.params;
+  const arrayPosition = teams.findIndex((team) => team.id === Number(id));
+  teams.splice(arrayPosition, 1);
+  res.status(200).end();
 });
 
 module.exports = app;
