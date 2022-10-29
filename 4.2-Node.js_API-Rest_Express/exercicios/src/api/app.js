@@ -27,6 +27,29 @@ app.use(express.json());
 //? Questão 3 - Crie um servidor Node.js utilizando o framework Express.
 //* FEITO
 
+//? questao 10 -  Crie um endpoint do tipo GET com a rota /movies/search, que possa listar todos os filmes do JSON.
+/**
+ * 
+  ⚠️ É importante que essa rota venha antes das demais que apresentam rotas dinâmicas no arquivo app.js para que funcione corretamente. Por isso, ela será a primeira rota de nosso arquivo.
+  Desenvolveremos o bloco dentro do try nos próximos passos.
+ */
+
+app.get('/movies/search', async (req, res) => {
+  try {
+    const { q } = req.query;
+    const allMovies = await readMoviesFile();
+    if (q) {
+      const filteredMovies = allMovies.filter((element) =>
+        element.movie.includes(q)
+      );
+      return res.status(200).json(filteredMovies);
+    }
+    res.status(200).end();
+  } catch (err) {
+    res.status(500).send({ message: err.message });
+  }
+});
+
 //?Questão 5 - Crie um endpoint do tipo GET com a rota /movies/:id, que possa listar um filme do JSON por id.
 // app é minha variavel que tem o express que recebe dois parametros
 app.get('/movies/:id', async (req, res) => {
