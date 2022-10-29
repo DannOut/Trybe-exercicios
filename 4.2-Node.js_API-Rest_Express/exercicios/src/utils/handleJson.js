@@ -11,22 +11,41 @@ const readMoviesFile = async () => {
   return content;
 };
 
-
-//? questão 7
+//? questão 7 - Crie um endpoint do tipo POST com a rota /movies, para cadastrar um novo filme no JSON.
 const writeMovieFile = async (movie) => {
   const content = JSON.parse(await readFile(filePath));
-  const updatedValue = JSON.stringify([...content, { id: content.length + 1, ...movie }])
-  await writeFile(filePath, updatedValue, null)
-}
+  const updatedValue = JSON.stringify([
+    ...content,
+    { id: content.length + 1, ...movie },
+  ]);
+  await writeFile(filePath, updatedValue, null);
+};
+
+//? questão 8 - Crie um endpoint do tipo PUT com a rota /movies/:id, que possa editar informações de um filme do JSON.
+
+const editMovieFile = async (movie) => {
+  const updatedValue = JSON.stringify(movie, null, 2);
+  // Os dois últimos parâmetros passados no método stringify são opcionais e têm por objetivo melhorar a formatação do arquivo JSON.
+  await writeFile(filePath, updatedValue);
+};
+
+//? questão 9 -  Crie um endpoint do tipo DELETE com a rota /movies/:id que possa deletar um filme do JSON.
+const deleteMovieFile = async (movie) => {
+  const updatedValue = JSON.stringify(movie, null, 2);
+  await writeFile(filePath, updatedValue);
+};
 
 //* função main para execução
-// function main() {
+function main() {
   // readMoviesFile();
   // writeMovieFile();
-// }
-// main();
+  // deleteMovieFile
+}
+main();
 
 module.exports = {
   readMoviesFile,
   writeMovieFile,
+  editMovieFile,
+  deleteMovieFile,
 };
