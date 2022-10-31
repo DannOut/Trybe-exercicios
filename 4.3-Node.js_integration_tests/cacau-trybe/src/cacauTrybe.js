@@ -6,30 +6,41 @@ const PATH = resolve(__dirname, 'data', 'cacauTrybeFile.json');
 const readCacauTrybeFile = async () => {
   try {
     const contentFile = await fs.readFile(PATH, 'utf-8');
-    return JSON.parse(contentFile)
+    return JSON.parse(contentFile);
   } catch (err) {
     return null;
   }
 };
 
-const getAllChocolates = async() => {
+const getAllChocolates = async () => {
   const cacauTrybe = await readCacauTrybeFile();
   return cacauTrybe.chocolates;
-}
+};
 
-const getChocolateById = async(chocolateId) => {
+const getChocolateById = async (chocolateId) => {
   const cacauTrybe = await readCacauTrybeFile();
-  return cacauTrybe.chocolates.find(({ id }) => Number(id) === Number(chocolateId));
-}
+  return cacauTrybe.chocolates.find(
+    ({ id }) => Number(id) === Number(chocolateId)
+  );
+};
 
-const getChocolateByBrand = async(brandId) => {
+const getChocolateByBrand = async (brandId) => {
   const cacauTrybe = await readCacauTrybeFile();
-  return cacauTrybe.chocolates
-    .filter((chocolate) => chocolate.brandId === brandId);
-}
+  return cacauTrybe.chocolates.filter(
+    (chocolate) => chocolate.brandId === brandId
+  );
+};
+
+const getChocolateByName = async (query) => {
+  const cacauTrybe = await readCacauTrybeFile();
+  return cacauTrybe.chocolates.filter(({ name }) =>
+    name.toLowerCase().includes(query.toLowerCase())
+  );
+};
 
 module.exports = {
   getAllChocolates,
   getChocolateById,
-  getChocolateByBrand
-}
+  getChocolateByBrand,
+  getChocolateByName,
+};
