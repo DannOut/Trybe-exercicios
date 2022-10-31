@@ -124,4 +124,14 @@ describe('Usando o método GET em /chocolates/brand/:brandId para buscar brandId
     ]);
   });
 });
-//});
+
+describe('usando o método GET em /chocolates/total para buscar a quantidade de tipos de chocolate que existem na base de dados', function() {
+  it('retorna a quantidade total de chocolates', async function () {
+    const response = await chai
+    .request(app)
+    .get('/chocolates/total');
+  
+    expect(response.status).to.be.equal(200);
+    expect(response.body).to.deep.equal({ totalChocolates: 4 });
+  })
+})
