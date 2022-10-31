@@ -149,3 +149,29 @@ describe('Usando o método GET em /chocolates/search', function () {
     expect(response.body).to.deep.equal([]);
   });
 });
+
+describe('Usando o método PUT em /chocolates/:id', function () {
+  it('Atualiza um chocolate existente', async function () {
+    const response = await chai.request(app).put('/chocolates/1').send({
+      name: 'Mint Pretty Good',
+      brandId: 2,
+    });
+
+    expect(response.status).to.be.equal(200);
+    expect(response.body).to.deep.equal({
+      id: 1,
+      name: 'Mint Pretty Good',
+      brandId: 2,
+    });
+  });
+  it('Se o chocolate não existe, gera um erro', async function () {
+    const response = await chai.request(app).put('chocolate/666').send({
+      name: 'Mint Pretty Good',
+      brandId: 2,
+    });
+    expect(response.status).to.be.equal(404);
+    expect(response.body).to.deep.equal({
+      message: 'chocolate not found',
+    });
+  });
+});
