@@ -34,11 +34,11 @@ app.put('/chocolates/:id', async (req, res) => {
   const { id } = req.params;
   console.log(req.body);
   const { name, brandId } = req.body;
-  const chocolates = await cacauTrybe.putUpdateChocolate(Number(id), {
+  const updatedChocolates = await cacauTrybe.putUpdateChocolate(Number(id), {
     name,
     brandId,
   });
-  if (chocolates) return res.status(200).json({ chocolates });
+  if (chocolates) return res.status(200).json({ chocolates: updatedChocolates });
   res.status(404).json({ message: 'chocolate not found' });
 });
 
