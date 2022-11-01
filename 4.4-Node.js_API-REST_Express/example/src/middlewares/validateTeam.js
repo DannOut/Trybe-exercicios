@@ -8,6 +8,6 @@ const validateTeam = (req, res, next) => {
   }
 };
 
-module.exports ={
+module.exports = {
   validateTeam,
 };
