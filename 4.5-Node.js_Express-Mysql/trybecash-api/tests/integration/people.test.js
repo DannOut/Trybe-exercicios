@@ -53,12 +53,38 @@ describe('Testando os endopoins de "/people"', function () {
     expect(response.body).to.deep.equal(peopleStubList);
   });
 
-  it('Testando a listam da pessoa com o "id: 1"', async function () {
+  it('Testando a listagem da pessoa com o "id: 1"', async function () {
     sinon.stub(connection, 'execute').resolves([peopleStubList[0]]);
     const response = await chai.request(app).get('/people/1');
 
     expect(response.status).to.be.equal(200);
     expect(response.body).to.deep.equal(peopleStubList[0]);
   });
+
+  it('Testando a alteração de uma pessoa com o "id: 1"', async function () {
+    sinon.stub(connection, 'execute').resolves([{ affectedRows: 1 }]);
+    const response = await chai.request(app).put('/people/1').send({
+      firstName: 'Lucão',
+      lasName: 'Nadador dos céus',
+      email: 'teste@teste.com',
+      phone: '851 678 4453',
+    });
+
+    expect(response.status).to.be.equal(200);
+    expect(response.body).to.deep.equal({
+      message: 'Pessoa de id 1 atualizada com sucesso',
+    });
+  });
+
+  it('Testando a exclusão da pessoa com o "id: 1"', async function () {
+    sinon.stub(connection, 'execute').resolves([{ affectedRows: 1 }]);
+    const response = await chai.request(app).delete('/people/1');
+
+    expect(response.status).to.be.equal(200);
+    expect(response.body).to.deep.equal({
+      message: 'Pessoa de id 1 excluída com sucesso',
+    });
+  });
+
   afterEach(sinon.restore);
 });
