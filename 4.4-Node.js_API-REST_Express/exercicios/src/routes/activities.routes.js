@@ -6,9 +6,11 @@ const validateDescription = require('../middlewares/validateDescription');
 const validateCreatedAt = require('../middlewares/validateCreatedAt');
 const validateRating = require('../middlewares/validateRating');
 const validateDifficult = require('../middlewares/validateDifficult');
+const auth = require('../middlewares/auth');
 
 router.post(
   '/activities',
+  auth,
   validateName,
   validatePrice,
   validateDescription,
