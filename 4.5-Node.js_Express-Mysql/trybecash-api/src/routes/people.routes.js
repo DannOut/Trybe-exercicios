@@ -7,9 +7,8 @@ router.get('/', async (_req, res) => {
   try {
     const [result] = await peopleDB.findAll();
     res.status(200).json(result);
-  } catch (error) {
-    console.log(error);
-    res.status(500).json({ message: error.sqlMessage });
+  } catch (err) {
+    throw err.sqlMessage;
   }
 });
 
@@ -17,28 +16,24 @@ router.get('/:id', async (req, res) => {
   try {
     const { id } = req.params;
 
-    //! verificar o porque de dois arrays aqui
     const [result] = await peopleDB.findById(id);
     if (result) return res.status(200).json(result);
     res.status(404).json({ message: 'Pessoa não encontrada' });
   } catch (err) {
-    console.log(err);
-    res.status(500).json({ message: err.sqlMessage });
+    throw { message: err.sqlMessage, status: 404 };
   }
 });
 
 router.post('/', async (req, res) => {
   const person = req.body;
-  try {
-    const [result] = await peopleDB.insert(person);
-    res.status(201).json({
-      message: `Pessoa cadastrada com sucesso com o id ${result.insertId}`,
-    });
-  } catch (err) {
-    res
-      .status(500)
-      .json({ message: 'Ocorreu um erro ao cadastrar uma pessoa' });
-  }
+  console.log('antes', person);
+  if (!person || !person.firstName)
+    throw { message: 'Ocorreu um erro ao cadastrar uma pessoa', status: 500 };
+
+  const [result] = await peopleDB.insert(person);
+  res.status(201).json({
+    message: `Pessoa cadastrada com sucesso com o id ${result.insertId}`,
+  });
 });
 
 router.put('/:id', async (req, res) => {
@@ -59,7 +54,7 @@ router.put('/:id', async (req, res) => {
       res.status(404).json({ message: 'Pessoa não encontrada' });
     }
   } catch (err) {
-    res.status(500).json({ message: err.sqlMessage });
+    throw err.sqlMessage;
   }
 });
 
@@ -75,7 +70,7 @@ router.delete('/:id', async (req, res) => {
       res.status(404).json({ message: 'Pessoa não encontrada' });
     }
   } catch (err) {
-    res.status(500).json({ message: err.sqlMessage });
+    throw err.sqlMessage;
   }
 });
 module.exports = router;
