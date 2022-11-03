@@ -27,8 +27,9 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
   const person = req.body;
   console.log('antes', person);
-  if (!person || !person.firstName)
-    throw { message: 'Ocorreu um erro ao cadastrar uma pessoa', status: 500 };
+  if (!person || !person.firstName) { 
+    throw { message: 'Ocorreu um erro ao cadastrar uma pessoa', status: 500 }; 
+  }
 
   const [result] = await peopleDB.insert(person);
   res.status(201).json({

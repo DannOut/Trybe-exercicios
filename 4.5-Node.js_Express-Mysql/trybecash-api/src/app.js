@@ -7,7 +7,7 @@ const peopleRoutes = require('./routes/people.routes');
 const app = express();
 
 app.use(express.json());
-app.use(morgan('combined'));
+app.use(morgan('tiny'));
 app.use(cors());
 
 // Routes Definition
@@ -18,7 +18,7 @@ app.use((err, _req, res, next) => {
   res.status(err.status).json({
     message: err.message,
   });
-  next()
+  next();
 });
 
 module.exports = app;
