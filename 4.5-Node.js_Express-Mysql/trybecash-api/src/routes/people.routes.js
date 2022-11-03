@@ -43,10 +43,6 @@ router.put('/:id', async (req, res) => {
     const person = req.body;
     const [result] = await peopleDB.update(person, id);
 
-    //! verificar esse affectedRows
-    console.log('log de result:', result);
-    //* log de result: [ { affectedRows: 1 } ]
-
     if (result.affectedRows > 0) {
       res
         .status(200)
