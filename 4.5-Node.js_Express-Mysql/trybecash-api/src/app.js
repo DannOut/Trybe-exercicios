@@ -1,18 +1,24 @@
 const express = require('express');
-// const morgan = require('morgan');
+require('express-async-errors');
+const morgan = require('morgan');
 const cors = require('cors');
-const peopleRoutes = require('./routes/people.routes'); 
-
+const peopleRoutes = require('./routes/people.routes');
 
 const app = express();
 
-app.use(express.json())
-// app.use(morgan('short'));
+app.use(express.json());
+app.use(morgan('combined'));
 app.use(cors());
-
 
 // Routes Definition
 app.use('/people', peopleRoutes);
 
+// Error Routes
+app.use((err, _req, res, next) => {
+  res.status(err.status).json({
+    message: err.message,
+  });
+  next()
+});
 
 module.exports = app;
