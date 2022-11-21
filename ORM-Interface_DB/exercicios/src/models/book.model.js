@@ -3,6 +3,7 @@ const BookModel = (Sequelize, Datatypes) => {
     title: Datatypes.STRING,
     author: Datatypes.STRING,
     pageQuantity: Datatypes.INTEGER,
+    publisher: Datatypes.STRING,
     createdAt: Datatypes.DATE,
     updatedAt: Datatypes.DATE,
   })
