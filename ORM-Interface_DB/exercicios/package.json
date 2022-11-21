@@ -19,7 +19,13 @@
     "sequelize": "^6.25.7"
   },
   "devDependencies": {
+    "git-cz": "^4.9.0",
     "nodemon": "^2.0.20",
     "sequelize-cli": "^6.5.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/git-cz"
+    }
   }
 }
