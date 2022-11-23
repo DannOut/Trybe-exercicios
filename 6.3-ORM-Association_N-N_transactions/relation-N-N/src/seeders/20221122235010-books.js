@@ -2,7 +2,7 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    return queryInterface.bulkInsert('Book',
+    return queryInterface.bulkInsert('books',
       [
         { name: 'O que o sol faz com as flores', release_year: 2017, total_pages: 159 },
         { name: 'Ensinando a transgredir: A educação como prática da liberdade', release_year: 2017, total_pages: 288 },
@@ -14,6 +14,6 @@ module.exports = {
   },
 
   down: async (queryInterface, _Sequelize) => {
-    await queryInterface.bulkDelete('Book', null, {});
+    await queryInterface.bulkDelete('books', null, {});
   },
 };
