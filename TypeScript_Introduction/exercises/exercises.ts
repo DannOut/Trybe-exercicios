@@ -6,13 +6,13 @@ export function getSquareArea(side: number): number {
 }
 
 // Implementação da área de um retangulo A = b * h;
-export function getRectangleArea(base: number, height: number): number {
-  return base * height;
+export function getRectangleArea(base: number, heigth: number): number {
+  return base * heigth;
 }
 
 // Implementação da área de um triangulo A = b * h / 2;
-export function getTriangleArea(base: number, height: number): number {
-  return (base * height) / 2;
+export function getTriangleArea(base: number, heigth: number): number {
+  return (base * heigth) / 2;
 }
 
 // Implementação do perímetro de um polígono P = a + b + c + d + e + f ...;
