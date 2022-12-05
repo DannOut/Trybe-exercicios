@@ -1,10 +1,11 @@
 export function convert(value: number, baseUnit: string, convertUnit: string) {
-  const conversionTable: string[] = ['km', 'hm', 'dam', 'm', 'dm', 'cm', 'mm'];
+  const conversionTableDistance: string[] = ['km', 'hm', 'dam', 'm', 'dm', 'cm', 'mm'];
+  const conversionTableWeight: string[] = ['kg', 'hg', 'dag', 'g', 'dg', 'cg', 'mg'];
 
-  const findBaseUnit: number = conversionTable.findIndex(
+  const findBaseUnit: number = [].findIndex(
     (value: string) => value === baseUnit
   );
-  const findConvertUnit: number = conversionTable.findIndex(
+  const findConvertUnit: number = [].findIndex(
     (value: string) => value === convertUnit
   );
 

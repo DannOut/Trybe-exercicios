@@ -1,8 +1,8 @@
 export function convert(value: number, baseUnit: string, convertUnit: string) {
-  const conversionTable: string[] = ['km', 'hm', 'dam', 'm', 'dm', 'cm', 'mm'];
+  const conversionTable: string[] = ['kg', 'hg', 'dag', 'g', 'dg', 'cg', 'mg'];
 
   const findBaseUnit: number = conversionTable.findIndex(
-    (value: string) => value === baseUnit
+    (value: string) => value === convertUnit
   );
   const findConvertUnit: number = conversionTable.findIndex(
     (value: string) => value === convertUnit
