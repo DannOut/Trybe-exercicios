@@ -1,9 +1,10 @@
-import readLine from 'readline-sync';
-
-const conversionTable: string[] = ['kg', 'hg', 'dag', 'g', 'dg', 'cg', 'mg'];
-export function convert(value: number, baseUnit: string, convertUnit: string) {
+import readLine = require('readline-sync');
+//0   //1   //2   //3   //4   //5   //6
+const conversionTable: string[] = ['kl', 'hl', 'dal', 'l', 'dl', 'cl', 'ml'];
+function convert(value: number, baseUnit: string, convertUnit: string) {
   const findBaseUnit: number = conversionTable.indexOf(baseUnit);
   const findConvertUnit: number = conversionTable.indexOf(convertUnit);
+
   return value * Math.pow(10, findConvertUnit - findBaseUnit);
 }
 
@@ -21,18 +22,17 @@ export function exec() {
     'escolha a unidade que deseje converter:\n'
   );
 
-  baseChoice = conversionTable[baseUnit];
+  baseChoice = conversionTable[baseUnit]; 
   convertChoice = conversionTable[convertUnit];
 
   if (!baseChoice || !convertChoice) {
-    console.log(`Função cancelada`);
-    return 0; // 0 é cancelar a escolha
+    console.log('Função cancelada');
+    return 0;
   }
 
   const result = convert(value, baseChoice, convertChoice);
   const message = `${value}${baseChoice} é igual a ${result}${convertChoice}`;
 
-  // printamos a mensagem de saída no terminal
   console.log(message);
 }
 

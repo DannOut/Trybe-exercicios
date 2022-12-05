@@ -1,25 +1,39 @@
-export function convert(value: number, baseUnit: string, convertUnit: string) {
-  const conversionTable: string[] = ['km', 'hm', 'dam', 'm', 'dm', 'cm', 'mm'];
+import readline from 'readline-sync';
 
-  const findBaseUnit: number = conversionTable.findIndex(
-    (value: string) => value === baseUnit
-  );
-  const findConvertUnit: number = conversionTable.findIndex(
-    (value: string) => value === convertUnit
-  );
-
-  if (findBaseUnit > findConvertUnit) {
-    const total: number = value * 10 ** (findConvertUnit - findBaseUnit);
-    return console.log(
-      `o valor é ${value}, e convertendo de "${baseUnit}" para "${convertUnit}" fica "${total} ${convertUnit}" `
-    );
-  }
-
-  if (findBaseUnit < findConvertUnit) {
-    const total: number = value * 10 ** (findConvertUnit + findBaseUnit);
-    return console.log(
-      `o valor é ${value}, e convertendo de "${baseUnit}" para "${convertUnit}" fica "${total} ${convertUnit}" `
-    );
-  }
-  return;
+const conversionTable: string[] = ['km', 'hm', 'dam', 'm', 'dm', 'cm', 'mm'];
+function convert(value: number, baseUnit: string, convertUnit: string) {
+  const findBaseUnit: number = conversionTable.indexOf(baseUnit);
+  const findConvertUnit: number = conversionTable.indexOf(convertUnit);
+  return value * Math.pow(10, findConvertUnit - findBaseUnit);
 }
+
+export function exec() {
+  let baseChoice: string = '';
+  let convertChoice: string = '';
+
+  const value = readline.questionFloat('Digite um valor a ser convertido: \n');
+  const baseUnit = readline.keyInSelect(
+    conversionTable,
+    'escolha a unidade base desejada: \n'
+  );
+  const convertUnit = readline.keyInSelect(
+    conversionTable,
+    'escolha a unidade que deseje converter:\n'
+  );
+
+  convertChoice = conversionTable[baseUnit];
+  baseChoice = conversionTable[convertUnit];
+
+  if (!convertChoice || !baseChoice) {
+    console.log(`Função cancelada`);
+    return 0; // 0 é cancelar a escolha
+  }
+
+  const result = convert(value, convertChoice, baseChoice);
+  const message = `${value}${convertChoice} é igual a ${result}${baseChoice}`;
+
+  // printamos a mensagem de saída no terminal
+  console.log(message);
+}
+
+exec();

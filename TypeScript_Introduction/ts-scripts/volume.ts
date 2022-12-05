@@ -1,10 +1,19 @@
 import readLine from 'readline-sync';
 
-const conversionTable: string[] = ['kg', 'hg', 'dag', 'g', 'dg', 'cg', 'mg'];
-export function convert(value: number, baseUnit: string, convertUnit: string) {
+const conversionTable: string[] = [
+  'km³',
+  'hm³',
+  'dam³',
+  'm³',
+  'dm³',
+  'cm³',
+  'mm³',
+];
+function convert(value: number, baseUnit: string, convertUnit: string) {
   const findBaseUnit: number = conversionTable.indexOf(baseUnit);
   const findConvertUnit: number = conversionTable.indexOf(convertUnit);
-  return value * Math.pow(10, findConvertUnit - findBaseUnit);
+
+  return value * Math.pow(1000, findConvertUnit - findBaseUnit);
 }
 
 export function exec() {
@@ -25,14 +34,13 @@ export function exec() {
   convertChoice = conversionTable[convertUnit];
 
   if (!baseChoice || !convertChoice) {
-    console.log(`Função cancelada`);
-    return 0; // 0 é cancelar a escolha
+    console.log('Função cancelada');
+    return 0;
   }
 
   const result = convert(value, baseChoice, convertChoice);
   const message = `${value}${baseChoice} é igual a ${result}${convertChoice}`;
 
-  // printamos a mensagem de saída no terminal
   console.log(message);
 }
 
