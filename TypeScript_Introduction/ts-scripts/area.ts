@@ -44,4 +44,6 @@ export function exec() {
   console.log(message);
 }
 
-exec();
+exec(); 
+
+export default exec;

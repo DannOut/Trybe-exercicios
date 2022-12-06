@@ -37,3 +37,5 @@ export function exec() {
 }
 
 exec();
+
+export default exec;

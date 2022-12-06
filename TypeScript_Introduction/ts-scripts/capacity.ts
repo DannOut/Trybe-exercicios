@@ -8,7 +8,7 @@ function convert(value: number, baseUnit: string, convertUnit: string) {
   return value * Math.pow(10, findConvertUnit - findBaseUnit);
 }
 
-export function exec() {
+export function exec(): number | void {
   let baseChoice: string = '';
   let convertChoice: string = '';
 
@@ -22,7 +22,7 @@ export function exec() {
     'escolha a unidade que deseje converter:\n'
   );
 
-  baseChoice = conversionTable[baseUnit]; 
+  baseChoice = conversionTable[baseUnit];
   convertChoice = conversionTable[convertUnit];
 
   if (!baseChoice || !convertChoice) {
@@ -37,3 +37,5 @@ export function exec() {
 }
 
 exec();
+
+export default exec;
