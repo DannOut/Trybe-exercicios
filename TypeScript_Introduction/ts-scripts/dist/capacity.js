@@ -27,3 +27,4 @@ function exec() {
 }
 exports.exec = exec;
 exec();
+exports.default = exec;
