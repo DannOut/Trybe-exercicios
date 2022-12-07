@@ -1,7 +1,7 @@
-import readline from 'readline-sync';
+import readLine from 'readline-sync';
 
-const conversionTable: string[] = ['km', 'hm', 'dam', 'm', 'dm', 'cm', 'mm'];
-function convert(value: number, baseUnit: string, convertUnit: string) {
+const conversionTable: string[] = ['kg', 'hg', 'dag', 'g', 'dg', 'cg', 'mg'];
+export function convert(value: number, baseUnit: string, convertUnit: string) {
   const findBaseUnit: number = conversionTable.indexOf(baseUnit);
   const findConvertUnit: number = conversionTable.indexOf(convertUnit);
   return value * Math.pow(10, findConvertUnit - findBaseUnit);
@@ -11,26 +11,26 @@ export function exec() {
   let baseChoice: string = '';
   let convertChoice: string = '';
 
-  const value = readline.questionFloat('Digite um valor a ser convertido: \n');
-  const baseUnit = readline.keyInSelect(
+  const value = readLine.questionFloat('Digite um valor a ser convertido: \n');
+  const baseUnit = readLine.keyInSelect(
     conversionTable,
     'escolha a unidade base desejada: \n'
   );
-  const convertUnit = readline.keyInSelect(
+  const convertUnit = readLine.keyInSelect(
     conversionTable,
     'escolha a unidade que deseje converter:\n'
   );
 
-  convertChoice = conversionTable[baseUnit];
-  baseChoice = conversionTable[convertUnit];
+  baseChoice = conversionTable[baseUnit];
+  convertChoice = conversionTable[convertUnit];
 
-  if (!convertChoice || !baseChoice) {
+  if (!baseChoice || !convertChoice) {
     console.log(`Função cancelada`);
     return 0; // 0 é cancelar a escolha
   }
 
-  const result = convert(value, convertChoice, baseChoice);
-  const message = `${value}${convertChoice} é igual a ${result}${baseChoice}`;
+  const result = convert(value, baseChoice, convertChoice);
+  const message = `${value}${baseChoice} é igual a ${result}${convertChoice}`;
 
   // printamos a mensagem de saída no terminal
   console.log(message);
