@@ -28,7 +28,7 @@ const sum: Sum = (x, y) => x + y;
 console.log(sum(2, 3));
 
 
-type Address = {
+type Address2 = {
   number: number;
   district: string;
   city: string;
