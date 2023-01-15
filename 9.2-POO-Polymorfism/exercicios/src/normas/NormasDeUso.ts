@@ -7,6 +7,10 @@ const normas = {
   futebol: {
     chuteira: 'trava',
   },
+  basquete: {
+    piso: 'liso',
+    min10: true,
+  },
 };
 
 export default normas;
