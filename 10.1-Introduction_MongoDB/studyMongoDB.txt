@@ -1,0 +1,1 @@
+todo o estudo foi feito direto no terminal e um gist foi criado no github com os principais comandos
