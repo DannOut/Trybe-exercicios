@@ -1,0 +1,55 @@
+use('cinema');
+// db.movies.find({category: {$all: ["adventure", 'action']}}); //Q01
+// db.movies.find({category: {$all: ['action', 'sci-fi']}, imdbRating: {$gt: 7}}); //Q02
+// db.movies.find({ratings: {$elemMatch: {$gt: 103}}}, {title: 1, ratings: 1, _id:0}) //Q03
+// db.movies.find({ ratings: {$elemMatch: {$gt: 100, $lte: 105}}}, { title:1, ratings: 1, _id: 0}) //Q04
+// db.movies.find({ratings: {$elemMatch: {$gte: 64, $lte: 105, $mod: [9, 0]}}}, {title: 1, ratings: 1, _id: 0}) //Q05
+// db.movies.find({ratings: {$elemMatch: {$gt: 103}}, category: {$all: ['adventure']}}, {title: 1, ratings: 1, category: 1, _id: 0}); //Q06
+// db.movies.find({category: {$size: 2}}, {title: 1, _id: 0}) //Q07
+// db.movies.find({ratings: {$size: 4}}, {title: 1, _id: 0}) //Q08
+// db.movies.find({budget: {$mod: [5, 0]}, category: {$size: 2}}) //Q09
+// db.movies.find({$or:[{category: {$all: ['sci-fi']}},{ratings: {$gt: 199}}]},{_id:0, title: 1, ratings: 1, category: 1}) //Q10
+// db.movies.find({
+// $and: [
+//     {ratings: {$size: 4}},
+//     {category: {$in: ['adventure', 'family']}},
+//     {imdbRating: {$not: {$lt: 7}}}
+//   ]
+// }) //Q11
+// db.movies.find({description: {$regex: /^The/}}) //Q12
+// db.movies.find({
+//   $expr: {
+//     $lt: ["$budget", "$grossWorldwide"]
+//   }
+// }) //Q12
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // $all (seleciona todos os documentos em que o valor do campo é um array que contenha todos os elementos especificados.)
+  // $elemMatch (seleciona os documentos que contêm um campo do tipo array com
+  //   pelo menos um elemento que satisfaça todos os critérios de seleção especificados.)
+  // $size (seleciona documentos em que um array contenha um número de elementos especificado.)
+  // $expr (permite que você utilize [expressões de agregação](https://docs.mongodb.com/manual/meta/aggregation-quick-reference/#aggregation-expressions)
+  //   e construa queries que comparem campos no mesmo documento.)
+  // $regex (fornece os “poderes” das expressões regulares (regular expressions) para seleção de strings.
+  //   MongoDB utiliza expressões regulares compatíveis com Perl (PCRE), versão 8.42, e com suporte a UTF-8.
+  // $mod (seleciona todos os documentos em que o valor do campo dividido por um divisor seja igual ao valor especificado
+  //   (ou seja, executa a operação matemática módulo).
