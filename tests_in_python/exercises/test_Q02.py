@@ -22,6 +22,18 @@ def test_other_numbers():
     assert convert_to_number("MPTW0") == "67890"
 
 
+def test_error_with_invalid_length():
+    value = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    print(len(value))
+    with pytest.raises(ValueError, match="Expression with invalid length"):
+        convert_to_number(value)
+
+
 def test_error_with_invalid_character():
-    with pytest.raises(ValueError, match=''):
+    with pytest.raises(ValueError):
         convert_to_number("A")
+
+
+def test_expression_with_invalid_chars():
+    with pytest.raises(ValueError):
+        convert_to_number("I-****-MY_JOB")

@@ -26,4 +26,4 @@ def convert_to_number(phrase):
     return number
 
 
-print(convert_to_number("1-HOME-SWEET-HOME"))
+# print(convert_to_number("A"))
